@@ -42,4 +42,4 @@ git clone https://github.com/kong-tiaoz/stm32f446re-learning.git
 
 原导入提交 `599d215` 和 README 提交 `d629696` 保留在历史中。作者例程只是从仓库根下的 `Nucleo-F446RE/` 改由 `references/stm32f446re-learning/Nucleo-F446RE/` 管理，内容未改。迁移不重写远程历史，不使用强制推送或子模块。
 
-本机的 `.local/git-migration/` 保存迁移前 Git 元数据、完整历史 bundle、说明文件和源码校验值，全部不上传。需要回退时先保存迁移后的新改动，再根据该目录中的记录恢复；不要直接删除当前仓库或运行强制清理命令。迁移没有重新构建、烧录或改变板上固件。
+迁移时曾在本机 `.local/git-migration/` 保存 Git 元数据、完整历史 bundle、说明文件和源码校验值。2026-10-30 验证完成后，按用户要求已清理这份临时恢复点；当前 Git 仓库和提交历史保持完整。以后操作前需要恢复点时，应重新建立备份。项目原始 Flash 备份仍在各项目的本地 `artifacts/backups/` 中。迁移没有重新构建、烧录或改变板上固件。
