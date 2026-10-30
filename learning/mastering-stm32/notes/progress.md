@@ -6,13 +6,15 @@
 | --- | --- | --- |
 | 首次寄存器工程 | 编译、备份、烧录和校验通过；用户确认 LD2 两短一长 | [验收摘要](../../../teststartproject/artifacts/verification.md)；实体 RESET 与断电重启尚未单独确认 |
 | 第 3/5 章阅读材料 | 本地已整理 | 新电脑按[准备说明](../local-reading.md)生成；正文和配图不上传 |
-| 第 3 章 HAL 例程 | Debug/Release 构建通过，尚未烧录 | [项目与实测](../../../book-hello-nucleo/README.md)；SWD 连接待排查 |
+| 第 3 章 HAL 例程 | 当前 100/900 ms Debug 构建、完整备份、下载校验、复位和重连读回通过；用户确认绿色 LD2 闪烁；原版 Release 此前通过 | [验收摘要](../../../book-hello-nucleo/artifacts/verification.md)；具体亮灭节奏、实体 RESET 和断电重启待分别确认 |
 | 第 5 章调试例程 | Debug/Release 构建通过，硬件调试待完成 | [项目与实测](../../../book-debugging/README.md) |
-| 第一课操作与复盘 | 用户已通过 VS Code 运行原版第 3 章构建；修改版操作待继续 | [本次课堂记录](02-ai-workflow-session.md)、[第一课](01-first-session.md) |
+| 第一课操作与复盘 | 用户已通过 VS Code 构建原版与修改版、尝试 Flash，并在官方 GUI 更新调试器后下载成功；助手复跑原任务脚本通过 | [本次课堂记录](02-ai-workflow-session.md)、[连接恢复复盘](03-stlink-recovery.md)；用户独立复跑与实际灯型待确认 |
 
-**当前：19:56–20:56 一小时 AI 辅助工作流实战，代码改动阶段。** 用户先运行了 `book-debugging` 的 Debug 任务（65916 字节），随后已正确运行 `book-hello-nucleo` 的原版 Debug 任务（5436 字节），均通过增量构建与镜像检查。助手已在本机主循环做“亮 100 ms、灭 900 ms”的最小改动，独立目录编译检查通过；用户查看修改差异及重新运行 Debug 任务仍待完成。这次先单独提交三份教学文档，源代码改动留在本地工作区。见[本次课堂记录](02-ai-workflow-session.md)。原书配合定位第 3 章 §3.2，仅讲本次操作所需的初始化、主循环和编译基础；原文位置是仅本地的 `chapters/03-hello-nucleo.md#source-p110`。
+**当前：第 3 章 §3.2，连接已恢复，完成当前 100/900 ms HAL 程序的脚本烧录验收。** 用户在官方 STLinkUpgrade 中将调试器从报告 V2J28M18 的状态升级至 V2J48M35，随后 GUI 下载成功。21:42 助手断开 GUI，按 VS Code 原任务定义执行 flash.ps1，完整备份 524288 字节、写入 5436 字节、校验并复位成功。21:43 再次连接读回，SHA256 与 BIN 一致；任务配置、源码、保护选项均未为本次恢复更改。脚本末尾旧灯型提示随后更正为 100/900 ms。
 
-恢复 SWD 连接后，才继续安全备份烧录 HAL 例程、实测和修改练习。当前板上仍是已经确认过的“两短一长”寄存器程序，不能将其现象记成 HAL 例程通过。
+有效恢复操作是官方调试器固件升级与 USB 重新枚举，尚不能确定最初失联或版本变化的机制。首次失联在 V2J48M35 下也出现过，WFI 未做对照，不应写成已确认根因。完整事实和排查改进见[复盘](03-stlink-recovery.md)。
+
+用户随后确认“我现在 LD2 绿灯一闪一闪”，已记录为当前固件有可见闪烁现象，未把它扩大为精确 100/900 ms 时序或复位测试通过。下次先在 CubeProgrammer 断开连接，再通过 VS Code 选择 **Flash (backup + verify) book-hello-nucleo**。具体亮灭节奏、黑色 RESET 和断电重启仍待分别观察；GDB/断点和 CH5 工程尚未验收。手动固件包仍位于 `book-hello-nucleo/artifacts/manual-flash/`，完整日志与备份仅本地保留。
 
 ## 本次学习记录模板
 

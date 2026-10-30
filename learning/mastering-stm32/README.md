@@ -19,15 +19,15 @@
 | --- | --- | --- |
 | 工具链与首烧 | **通过** | [teststartproject 验收记录](../../teststartproject/artifacts/verification.md)：完整 512 KB 备份、校验通过，用户已亲眼确认 LD2 两短一长；实体 RESET / 断电重启尚未单独确认 |
 | 首批阅读材料 | **已整理** | 第 3 章 21 张图，第 5 章 18 张图；有章节边界、页锚点和原书指纹 |
-| 第 3 章 HAL 闪灯 | **Debug/Release 编译通过；烧录待恢复连接** | [book-hello-nucleo](../../book-hello-nucleo/README.md)，从寄存器版对照到 HAL |
+| 第 3 章 HAL 闪灯 | **当前 Debug 构建、完整备份、下载校验与复位后读回通过** | [book-hello-nucleo](../../book-hello-nucleo/README.md)，LD2 100/900 ms；实体观察待确认 |
 | 第 5 章调试与串口 | **Debug/Release 编译通过；硬件调试待完成** | [book-debugging](../../book-debugging/README.md)，断点、单步、观察变量和 printf/scanf |
 | 你的英语复盘与动手练习 | **待完成** | [第一课记录](notes/01-first-session.md)；不会把准备材料等同于你已经学会 |
 
-**当前学习位置：第 3 章 §3.2；下一步：先理解初始化顺序与 `HAL_Delay(500)` 的含义。** 下次说“继续上一课”，先读取本文件、第一课记录和对应项目实测结果，再从未完成项继续。
+**当前学习位置：第 3 章 §3.2；下一步：在 VS Code 中独立复跑当前任务，确认亮 100 ms、灭 900 ms 的现象，再简要对照 GPIO 与延时调用。** 下次说“继续上一课”，先读取本文件、第一课记录和对应项目实测结果，再从未完成项继续。
 
 个人学习状态统一更新到[可同步的进度记录](notes/progress.md)；`.local/` 中的内部执行记录不公开。
 
-当前板上仍运行原来的“两短一长”寄存器程序。2026-10-30 实施时，USB 重插、普通/Under Reset 连接及配合手动 RESET 检查后，SWD 仍无法读取内核 ID；两个 HAL 工程尚未下载。现在可以先精读并对照源码；恢复连接后再执行本课运行与修改环节。详见 [连接实测记录](../../book-debugging/artifacts/verification.md)。
+2026-10-30，板载 ST-LINK 更新为 V2J48M35 后，用户通过官方 GUI 下载当前 HAL 程序，助手再按 VS Code 原任务命令完成备份、下载校验、复位与独立重连读回。故障复盘见[ST-LINK 恢复记录](notes/03-stlink-recovery.md)；当前 HAL 镜像已写入，实体 LD2 节奏、RESET 和断电重启待观察，CH5 调试工程仍未验收。
 
 ## 全书与实验入口
 

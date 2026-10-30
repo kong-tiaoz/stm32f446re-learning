@@ -1,8 +1,8 @@
 # 教材例程 1：Hello Nucleo（NUCLEO-F446RE）
 
-先运行，再读代码。本项目是 *Mastering STM32, Second Edition* 官方 `Nucleo-F446RE/hello-nucleo` 示例的 GCC + CMake + Ninja 移植。`Core/`、`Drivers/`、启动文件保持作者仓库原样，入口是 [Core/Src/main.c](Core/Src/main.c)。预期绿色 **LD2 亮 500 ms、灭 500 ms**，完整周期约 1 秒。
+先运行，再读代码。本项目是 *Mastering STM32, Second Edition* 官方 `Nucleo-F446RE/hello-nucleo` 示例的 GCC + CMake + Ninja 移植。当前学习练习只修改主循环用户区域，入口是 [Core/Src/main.c](Core/Src/main.c)：绿色 **LD2 亮 100 ms、灭 900 ms**，完整周期约 1 秒。原书例程为每 500 ms 翻转一次。
 
-本机当前状态：Debug/Release 编译已通过，SWD 重连失败，尚未烧入本例程；详见 [本地验收记录](artifacts/verification.md)。板上仍是首次寄存器测试程序。
+本机当前状态：2026-10-30，用户更新板载 ST-LINK 至 V2J48M35 后在官方 GUI 下载成功；随后原 VS Code 烧录任务调用的脚本完成 Debug 构建、512 KB 备份、下载校验与复位，复位后再次连接读回的固件与 BIN 一致。LD2 实际节奏、实体 RESET 与断电重启仍需分别观察确认。详见 [验收记录](artifacts/verification.md)及[故障复盘](../learning/mastering-stm32/notes/03-stlink-recovery.md)。
 
 ## 先跑起来
 
@@ -38,7 +38,7 @@
 powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File .\scripts\setup-debug.ps1
 ```
 
-脚本只发现本机 GCC/GDB/ST-LINK GDB Server/Programmer 路径，不连接开发板。首次从随仓库提供的 `.vscode/launch.template.json` 生成本地 `launch.json`，后续只更新对应附加配置并保留其他调试配置；实际 `launch.json` 不上传 Git。路径不依赖多根工作区会忽略的文件夹级 window 设置，机器或工具版本改变后重跑即可。关闭占用 ST-LINK 的其他调试会话，在 `HAL_GPIO_TogglePin` 那行设断点，按 F5 选择 **Attach STM32F446RE (no download)**。该配置只连接已烧录的程序，ELF 必须与 Flash 内容一致；修改源码后须重新安全烧录再调试。
+脚本只发现本机 GCC/GDB/ST-LINK GDB Server/Programmer 路径，不连接开发板。首次从随仓库提供的 `.vscode/launch.template.json` 生成本地 `launch.json`，后续只更新对应附加配置并保留其他调试配置；实际 `launch.json` 不上传 Git。路径不依赖多根工作区会忽略的文件夹级 window 设置，机器或工具版本改变后重跑即可。关闭占用 ST-LINK 的其他调试会话，在 `HAL_GPIO_WritePin` 那行设断点，按 F5 选择 **Attach STM32F446RE (no download)**。该配置只连接已烧录的程序，ELF 必须与 Flash 内容一致；修改源码后须重新安全烧录再调试。
 
 Attach 会停在当前执行位置；继续运行即可命中循环断点。观察 `uwTick`、`SystemCoreClock` 和 `GPIOA->ODR`，用 Step Over 跨过切换函数后，ODR 的 bit 5 改变。不要在 `HAL_Delay` 中长时间单步：CPU 停止时 SysTick 的推进也会受影响，不能用断点停留时间判断正常闪烁周期。配置文件已检查，实际连接和断点效果需要开发板验收。
 
@@ -51,21 +51,21 @@ Attach 会停在当前执行位置；继续运行即可命中循环断点。观�
 | 3 | `SystemClock_Config()` | HSI 16 MHz 经 PLL：16/16×336/4 = **84 MHz**；AHB 84 MHz、APB1 42 MHz、APB2 84 MHz | 改系统时钟为什么会影响外设计时？ |
 | 4 | `MX_GPIO_Init()` 和 `Core/Inc/main.h` | 打开 GPIO 时钟；将 LD2 对应 **PA5** 设为推挽输出；B1 配为下降沿输入 | 时钟打开、输出模式、引脚编号分别在哪里？ |
 | 5 | `MX_USART2_UART_Init()` 与 `stm32f4xx_hal_msp.c` | 配置 USART2 和 PA2/PA3 复用功能；此例未使用收发 API | “初始化串口”与“发送内容”有什么区别？ |
-| 6 | `while (1)` | 切换 PA5，调用 `HAL_Delay(500)`，重复 | 每次切换是 500 ms，为什么完整周期为 1000 ms？ |
+| 6 | `while (1)` | 当前练习将 PA5 置高并延时 100 ms，再置低并延时 900 ms，重复 | 亮灭时间不同，为什么完整周期仍约为 1000 ms？ |
 | 7 | `Core/Src/stm32f4xx_it.c` | `SysTick_Handler` 调用 `HAL_IncTick()` | 关闭中断为什么可能使 `HAL_Delay` 停住？ |
 
-可以按调用链读 `main → HAL_GPIO_TogglePin → GPIO 寄存器`，先理解一个动作，再查手册。`Drivers/` 是库代码，首次学习时无须逐文件通读。B1 在这个例程中没有应用处理逻辑，按按钮不会主动改变闪烁方式。
+可以按调用链读 `main → HAL_GPIO_WritePin → GPIO 寄存器`，先理解一个动作，再查手册。`Drivers/` 是库代码，首次学习时无须逐文件通读。B1 在这个例程中没有应用处理逻辑，按按钮不会主动改变闪烁方式。
 
 ## 两项练习
 
-1. **控制周期。** 先记录原始亮灭时间，然后仅把 `HAL_Delay(500)` 改为 `HAL_Delay(100)`。预测完整周期，重新编译和安全烧录后测量。验收：亮 100 ms、灭 100 ms，完整周期约 200 ms。完成后恢复 500。
+1. **控制周期。** 当前练习为亮 100 ms、灭 900 ms。后续可仅把熄灭后的 `HAL_Delay(900)` 改为 `HAL_Delay(100)`。预测完整周期，重新编译和安全烧录后测量。验收：亮 100 ms、灭 100 ms，完整周期约 200 ms。完成后恢复 900；此题尚未执行。
 2. **看见位操作。** 保持源代码不变，在切换函数前后观察 `GPIOA->ODR` 和 `LD2_Pin`。记录三次循环的 bit 5 值，用自己的话解释 HAL 为什么能只改 PA5 而不改其余输出位。验收：能将引脚掩码、寄存器变化与 LD2 状态对应起来。
 
 ## 构建与来源
 
 - 官方仓库：[cnoviello/mastering-stm32-2nd](https://github.com/cnoviello/mastering-stm32-2nd)，固定提交 `2183a2c5fe25fd9229abd21dab4f23658036dd3f`，原路径 `Nucleo-F446RE/hello-nucleo`。原始 Core/Drivers 文件校验值见 [UPSTREAM.json](UPSTREAM.json)。
 - Cortex-M4F、硬浮点 ABI、512 KB Flash、128 KB SRAM；Debug `-Og -g3`，Release `-Os`。此闪灯项目使用 newlib-nano。CMake 同时生成 ELF/HEX/BIN；构建脚本额外检查镜像大小、栈顶、Reset/SysTick 向量。
-- GNU ld 移植只修改 `STM32F446RETX_FLASH.ld` 的构造数组只读属性并移除旧的 C 库丢弃规则；通过 `-z noexecstack` 声明 ELF 栈属性。应用、HAL、CMSIS、启动汇编未改动。原 IOC 和 `upstream-metadata/` 用于追溯；实际构建以 CMake 为准。
+- GNU ld 移植只修改 `STM32F446RETX_FLASH.ld` 的构造数组只读属性并移除旧的 C 库丢弃规则；通过 `-z noexecstack` 声明 ELF 栈属性。当前应用另有上述主循环时序练习，HAL、CMSIS、启动汇编未改动。原 IOC 和 `upstream-metadata/` 用于追溯；实际构建以 CMake 为准。
 - 请先阅读 [NOTICE.md](NOTICE.md)。保留 ST、Arm 及教材作者的版权归属，本项目没有将上游整仓声明为 MIT。
 
 本次已用 GNU Arm GCC 14.3.1、CMake 4.3.1、Ninja 1.13.2 分别编译 Debug/Release，构建无警告；Debug BIN 为 **5436 字节**，Release BIN 为 **4724 字节**。Reset/SysTick 向量、栈顶和 ELF 段权限检查均通过。构建日志、ELF 检查日志位于 `artifacts/logs/`，产物 SHA256 记录于 `artifacts/build-verification.json`。本次构建验证不连接硬件；运行结果以烧录记录和实际观察为准。

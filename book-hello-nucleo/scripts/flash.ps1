@@ -24,5 +24,5 @@ $result = [pscustomobject]@{
 }
 $resultPath = New-ArtifactPath -Subdirectory 'logs' -Name ("flash-$stamp.json")
 [IO.File]::WriteAllText($resultPath,($result | ConvertTo-Json),[Text.UTF8Encoding]::new($false))
-Write-Host 'Programming verified. Expected LD2: 500 ms ON, 500 ms OFF (1 Hz complete cycle).'
+Write-Host 'Programming verified. Expected LD2: 100 ms ON, 900 ms OFF (1 Hz complete cycle).'
 $result

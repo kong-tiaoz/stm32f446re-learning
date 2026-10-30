@@ -117,3 +117,5 @@ while (1) {
 ## 接下来
 
 本课完成后读 [第 5 章 §5.1（仅本地）](../chapters/05-introduction-to-debugging.md#source-p147)，运行 [CH5 调试工程](../../../book-debugging/README.md)。先解释 GDB、GDB server、ST-LINK、MCU 的关系，再练习断点、单步和变量观察，最后测试串口输入输出。
+
+打开哪个源码文件，不会自动决定运行哪个项目的任务，要核对任务旁的文件夹名。
