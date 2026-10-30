@@ -10,6 +10,7 @@ GitHub：[kong-tiaoz/stm32f446re-learning](https://github.com/kong-tiaoz/stm32f4
 | [第一课](learning/mastering-stm32/notes/01-first-session.md) | 英语、代码对照和动手练习 |
 | [原厂资料](references/ST-official/README.md) | 七份离线 PDF、版本、来源和校验值 |
 | [Git 使用与迁移说明](docs/git-workflow.md) | 统一仓库的目录、提交、推送和恢复说明 |
+| [Ilearned 操作技巧](Ilearned/README.md) | 日常操作与踩坑记录；包含误点 CMake 后的恢复步骤 |
 
 | 项目 | 用途 | 实现 | 状态 |
 | --- | --- | --- | --- |
