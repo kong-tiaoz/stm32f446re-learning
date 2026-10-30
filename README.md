@@ -13,6 +13,23 @@
 
 ## 开始学习
 
+### 这台电脑上的学习入口
+
+本仓库已下载到 `F:\project\NUCLEO-F446RE\references\stm32f446re-learning`，作为作者例程对照区。日常在 VS Code 中打开上两级的 `NUCLEO-F446RE.code-workspace`；教材、英语笔记和阅读进度从 [学习区](../../learning/mastering-stm32/README.md) 进入。
+
+| 顺序 | 学习材料 / 工程 | 本次要验证的能力 |
+| --- | --- | --- |
+| 1 | [寄存器 LED 测试](../../teststartproject/README.md) | 编译、备份、烧录和板载 PA5；已经烧录且用户确认“两短一长” |
+| 2 | [作者 hello-nucleo](Nucleo-F446RE/hello-nucleo/) 与 [本地 HAL 实验](../../book-hello-nucleo/README.md) | 对照 GPIO 初始化、时钟、HAL_Delay；本地实验状态以其 README 为准 |
+| 3 | [本地调试实验](../../book-debugging/README.md) | 断点、单步、变量观察和串口；状态以其 README 为准 |
+| 4 | 按教材进入其余章节 | 每个主题建立独立实验，记录改动与实测结果 |
+
+每次学习：读一小节英文 → 编译运行完整例程 → 对照代码解释 → 只改一个变量或行为 → 记录预期与实际现象 → 用英语写两三句话复盘。阅读进度和生词保存在学习区，硬件实验的备份、烧录日志保存在各项目的 `artifacts/`。
+
+这里保留 CubeIDE、`.ioc` 和原始驱动结构，不能直接把这些工程当成已配置好的 VS Code CMake 项目。需要运行时优先使用独立移植的实验目录，或按下面的 CubeIDE 导入方式操作；不要批量重新生成全部 `.ioc`，以免覆盖教材代码。
+
+### 原仓库的 CubeIDE 导入方法
+
 1. 克隆仓库：
 
    ```sh
