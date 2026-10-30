@@ -1,0 +1,602 @@
+# Mastering STM32 — 全书目录
+
+来源：当前本地 EPUB 的 toc.ncx。带链接的章节已整理；其余保留目录，随学习进度转换。纸书和 EPUB 页码不一定一致。
+
+**原文章节链接仅本地可用**：GitHub 不保存 `chapters/` 和原书配图，需先按[阅读材料准备说明](local-reading.md)生成后再点击章节链接。
+
+## Table of Contents
+
+
+## Preface
+
+- Who Is This Book For?
+- How to Integrate This Book?
+- How Is the Book Organized?
+- Differences With the First Edition
+- About the Author
+- Errata and Suggestions
+- Book Support
+- How to Help the Author
+- Copyright Disclaimer
+- Credits
+
+## Acknowledgments to the First Edition
+
+
+## I Introduction
+
+- Introduction to STM32 MCU Portfolio
+  - Introduction to ARM Based Processors
+    - Cortex and Cortex-M Based Processors
+      - Core Registers
+      - Memory Map
+      - Bit-Banding
+      - Thumb-2 and Memory Alignment
+      - Pipeline
+      - Interrupts and Exceptions Handling
+      - SysTimer
+      - Power Modes
+      - TrustZoneTM
+      - CMSIS
+      - Effective Implementation of Cortex-M Features in the STM32 Portfolio
+  - Introduction to STM32 Microcontrollers
+    - Advantages of the STM32 Portfolio….
+    - ….And Its Drawbacks
+  - A Quick Look at the STM32 Subfamilies
+    - F0
+    - F1
+    - F2
+    - F3
+    - F4
+    - F7
+    - H7
+    - L0
+    - L1
+    - L4
+    - L4+
+    - L5
+    - U5
+    - G0
+    - G4
+    - STM32WB
+    - STM32WL
+    - How to Select the Right MCU for You?
+  - The Nucleo Development Board
+- Get In Touch With SM32CubeIDE
+  - Why Choose STM32CubeIDE as Tool-Chain for STM32
+    - Two Words About Eclipse…
+    - … and GCC
+  - Downloading and Installing the STM32CubeIDE
+    - Windows - Installing the Tool-Chain
+    - Linux - Installing the Tool-Chain
+    - Mac - Installing the Tool-Chain
+  - STM32CubeIDE overview
+- [Hello, Nucleo!](chapters/03-hello-nucleo.md#source-p106)
+  - [Create a Project](chapters/03-hello-nucleo.md#source-p106)
+  - [Adding Something Useful to the Generated Code](chapters/03-hello-nucleo.md#source-p109)
+  - [Connecting the Nucleo to the PC](chapters/03-hello-nucleo.md#source-p114)
+    - [ST-LINK Firmware Upgrade](chapters/03-hello-nucleo.md#source-p115)
+  - [Flashing the Nucleo using STM32CubeProgrammer](chapters/03-hello-nucleo.md#source-p116)
+- STM32CubeMX Tool
+  - Introduction to CubeMX Tool
+    - Target Selection Wizard
+      - MCU/MPU Selector
+      - Board Selector
+      - Example Selector
+      - Cross Selector
+    - MCU and Middleware Configuration
+      - Pinout View & Configuration
+      - Clock Configuration View
+    - Project Manager
+    - Tools View
+  - Understanding Project Structure
+  - Downloading Book Source Code Examples
+  - Management of STM32Cube Packages
+- [Introduction to Debugging](chapters/05-introduction-to-debugging.md#source-p147)
+  - [What is Behind a Debug Session](chapters/05-introduction-to-debugging.md#source-p147)
+  - [Debugging With STM32CubeIDE](chapters/05-introduction-to-debugging.md#source-p149)
+    - [Debug Configurations](chapters/05-introduction-to-debugging.md#source-p152)
+  - [I/O Retargeting](chapters/05-introduction-to-debugging.md#source-p155)
+
+## II Diving into the HAL
+
+- GPIO Management
+  - STM32 Peripherals Mapping and HAL Handlers
+  - GPIOs Configuration
+    - GPIO Mode
+    - GPIO Alternate Function
+  - Driving a GPIO
+  - De-initialize a GPIO
+- Interrupts Management
+  - NVIC Controller
+    - Vector Table in STM32
+  - Enabling Interrupts
+    - External Lines and NVIC
+    - Enabling Interrupts with CubeMX
+  - Interrupt Lifecycle
+  - Interrupt Priority Levels
+    - Cortex-M0/0+
+    - Cortex-M3/4/7/33
+    - Setting Interrupt Priority in CubeMX
+  - Interrupt Re-Entrancy
+  - Mask All Interrupts at Once or an a Priority Basis
+- Universal Asynchronous Serial Communications
+  - Introduction to UARTs and USARTs
+  - UART Initialization
+    - UART Configuration Using CubeMX
+  - UART Communication in Polling Mode
+    - Installing a Terminal Emulator in Eclipse
+  - UART Communication in Interrupt Mode
+    - UART Related Interrupts
+  - Error Management
+  - List of Available Callbacks in the HAL_UART Module
+- DMA Management
+  - Introduction to DMA
+    - The Need of a DMA and the Role of the Internal Buses
+    - The DMA Controller
+      - The DMA Implementation in F0/F1/F3/L0/L1/L4 MCUs
+      - The DMA Implementation in F2/F4/F7 MCUs
+      - The DMA Implementation in G0/G4/L4+/L5/H7 MCUs
+  - HAL_DMA Module
+    - DMA_HandleTypeDef in F0/F1/F3/L0/L1/L4 HALs
+    - DMA Configuration in G0/G4/L4+/L5/H7 HALs
+    - DMA_HandleTypeDef in F2/F4/F7 HALs
+    - How to Perform DMA Transfers in Polling Mode
+    - How to Perform DMA Transfers in Interrupt Mode
+    - Using the HAL_UART Module with DMA Mode Transfers
+    - Programming the DMAMUX With the CubeHAL
+    - Miscellaneous Functions From HAL_DMA and HAL_DMA_Ex Modules
+  - Using CubeMX to Configure DMA Requests
+  - Correct Memory Allocation of DMA Buffers
+  - A Case Study: The DMA Memory-To-Memory Transfer Performance Analysis
+- Clock Tree
+  - Clock Distribution
+    - Overview of the STM32 Clock Tree
+      - The Multispeed Internal RC Oscillator in STM32L/U Families
+    - Configuring Clock Tree Using CubeMX
+    - Clock Source Options in Nucleo Boards
+      - Clock Source in Nucleo-64 rev. MB1136 (older ones with ST-LINK V2.1)
+        - OSC Clock Supply
+        - OSC 32kHz Clock Supply
+      - Clock Source in Nucleo-64 rev. MB1367 (newer ones with ST-LINK v3)
+        - OSC Clock Supply
+        - OSC 32kHz Clock Supply
+  - Overview of the HAL_RCC Module
+    - Compute the Clock Frequency at Run-Time
+    - Enabling the Master Clock Output
+    - Enabling the Clock Security System
+  - HSI Calibration
+- Timers
+  - Introduction to Timers
+    - Timer Categories in an STM32 MCU
+    - Effective Availability of Timers in the STM32 Portfolio
+  - Basic Timers
+    - Using Timers in Interrupt Mode
+      - Time Base Generation in Advanced Timers
+    - Using Timers in Polling Mode
+    - Using Timers in DMA Mode
+    - Stopping a Timer
+    - Using CubeMX to Configure a Basic Timer
+  - General Purpose Timers
+    - Time Base Generator with External Clock Sources
+      - External Clock Mode 2
+      - External Clock Mode 1
+      - Using CubeMX to Configure the Source Clock of a General Purpose Timer
+    - Master/Slave Synchronization Modes
+      - Enable Trigger-Related Interrupts
+      - Using CubeMX to Configure the Master/Slave Synchronization
+    - Generate Timer-Related Events by Software
+    - Counting Modes
+    - Input Capture Mode
+      - Using CubeMX to Configure the Input Capture Mode
+    - Output Compare Mode
+      - Using CubeMX to Configure the Output Compare Mode
+    - Pulse-Width Generation
+      - Generating a Sinusoidal Wave Using PWM
+      - Using CubeMX to Configure the PWM Mode
+    - One Pulse Mode
+      - Using CubeMX to Configure the OPM Mode
+    - Encoder Mode
+      - Using CubeMX to Configure the Encoder Mode
+    - Other Features Available in General Purpose and Advanced Timers
+      - Hall Sensor Mode
+      - Combined Three-Phase PWM Mode and Other Motor-Control Related Features
+      - Break Input and Locking of Timer Registers
+      - Preloading of Auto-Reload Register
+    - Debugging and Timers
+  - SysTick Timer
+    - Use Another Timer as System Timebase Source
+  - A Case Study: How to Precisely Measure Microseconds with STM32 MCUs
+- Analog-To-Digital Conversion
+  - Introduction to SAR ADC
+  - HAL_ADC Module
+    - Conversion Modes
+      - Single-Channel, Single Conversion Mode
+      - Scan Single Conversion Mode
+      - Single-Channel, Continuous Conversion Mode
+      - Scan Continuous Conversion Mode
+      - Injected Conversion Mode
+      - Dual Modes
+    - Channel Selection
+    - ADC Resolution and Conversion Speed
+    - A/D Conversions in Polling Mode
+    - A/D Conversions in Interrupt Mode
+    - A/D Conversions in DMA Mode
+      - Convert Multiple Times the Same Channel in DMA Mode
+      - Multiple and not Continuous Conversions in DMA Mode
+      - Continuous Conversions in DMA Mode
+    - Errors Management
+    - Timer-Driven Conversions
+    - Conversions Driven by External Events
+    - ADC Calibration
+  - Using CubeMX to Configure ADC Peripheral
+- Digital-To-Analog Conversion
+  - Introduction to the DAC Peripheral
+  - HAL_DAC Module
+    - Driving the DAC Manually
+    - Driving the DAC in DMA Mode Using a Timer
+    - Triangular Wave Generation
+    - Noise Wave Generation
+- I²C
+  - Introduction to the I²C specification
+    - The I²C Protocol
+      - START and STOP Condition
+      - Byte Format
+      - Address Frame
+      - Acknowledge (ACK) and Not Acknowledge (NACK)
+      - Data Frames
+      - Combined Transactions
+      - Clock Stretching
+    - Availability of I²C Peripherals in STM32 MCUs
+  - HAL_I2C Module
+    - Using the I²C Peripheral in Master Mode
+      - I/O MEM Operations
+      - Combined Transactions
+      - A Note About the Clock Configuration in STM32F0/L0/L4 families
+    - Using the I²C Peripheral in Slave Mode
+  - Using CubeMX to Configure the I²C Peripheral
+- SPI
+  - Introduction to the SPI Specification
+    - Clock Polarity and Phase
+    - Slave Select Signal Management
+    - SPI TI Mode
+    - Availability of SPI Peripherals in STM32 MCUs
+  - HAL_SPI Module
+    - Exchanging Messages Using SPI Peripheral
+    - Maximum Transmission Frequency Reachable using the CubeHAL
+  - Using CubeMX to Configure SPI Peripheral
+- Cyclic Redundancy Check
+  - Introduction to CRC Computing
+    - CRC Calculation in STM32F1/F2/F4/L1 MCUs
+    - CRC Peripheral in STM32F0/F3/F7/L0/L4/L5/G0/G4 MCUs
+  - HAL_CRC Module
+- IWDG and WWDG Timers
+  - The Independent Watchdog Timer
+    - Using the CubeHAL to Program IWDG Timer
+  - The System Window Watchdog Timer
+    - Using the CubeHAL to Program WWDG Timer
+  - Detecting a System Reset Caused by a Watchdog Timer
+  - Freezing Watchdog Timers During a Debug Session
+  - Selecting the Right Watchdog Timer for Your Application
+- Real-Time Clock
+  - Introduction to the RTC Peripheral
+  - HAL_RTC Module
+    - Setting and Retrieving the Current Date/Time
+      - Correct Way to Read Date/Time Values
+    - Configuring Alarms
+    - Periodic Wakeup Unit
+    - Timestamp Generation and Tamper Detection
+    - RTC Calibration
+      - RTC Coarse Calibration
+      - RTC Smooth Calibration
+      - Reference Clock Detection
+  - Using the Backup SRAM
+
+## III Advanced topics
+
+- Power Management
+  - Power Management in Cortex-M Based MCUs
+  - How Cortex-M MCUs Handle Run and Sleep Modes
+    - Entering/exiting sleep modes
+      - Sleep-On-Exit
+    - Sleep Modes in Cortex-M Based MCUs
+  - Power Management in STM32F Microcontrollers
+    - Power Sources
+    - Power Modes
+      - Run Mode
+        - Dynamic Voltage Scaling in STM32F4/F7 MCUs
+        - Over/Under-Drive Mode in STM32F4/F7 MCUs
+      - Sleep Mode
+      - Stop Mode
+      - Standby Mode
+      - Low-Power Modes Example
+    - An Important Warning for STM32F1 Microcontrollers
+  - Power Management in STM32L/G Microcontrollers
+    - Power Sources
+    - Power Modes
+      - Run Modes
+      - Sleep Modes
+        - Batch Acquisition Mode
+      - Stop Modes
+      - Standby Modes
+      - Shutdown Mode
+    - Power Modes Transitions
+    - Low-Power Peripherals
+      - LPUART
+      - LPTIM
+      - LPGPIO
+      - LPDMA
+  - Power Supply Supervisors
+  - Debugging in Low-Power Modes
+  - Using the CubeMX Power Consumption Calculator
+  - A Case Study: Using Watchdog Timers With Low-Power Modes
+- Memory layout
+  - The STM32 Memory Layout Model
+    - Flash Memory Typical Organization
+    - SRAM Memory Typical Organization
+    - Understanding Compilation and Linking Processes
+  - The Really Minimal STM32 Application
+    - ELF Binary File Inspection
+    - .data and .bss Sections Initialization
+      - A Word About the COMMON Section
+    - .rodata Section
+    - Stack and Heap Regions
+    - Checking the Size of Heap and Stack at Compile-Time
+    - Differences With the Tool-Chain Script Files
+  - How to Use the CCM Memory
+    - Relocating the vector table in CCM Memory
+  - How to Use the MPU in Cortex-M0+/3/4/7 Based STM32 MCUs
+    - Programming the MPU With the CubeHAL
+- Flash Memory Management
+  - Introduction to STM32 Flash Memory
+  - The HAL_FLASH Module
+    - Flash Memory Unlocking
+    - Flash Memory Erasing
+    - Flash Memory Programming
+    - Flash Read Access During Programming and Erasing
+  - Option Bytes
+    - Flash Memory Read Protection
+  - Optional OTP and True-EEPROM Memories
+  - Flash Read Latency and the ART™ Accelerator
+    - The Role of the TCM Memories in STM32F7/H7 MCUs
+      - How to Access Flash Memory Through the TCM Interface
+      - Using CubeMX to Configure Flash Memory Interface
+- Booting Process
+  - The Cortex-M Unified Memory Layout and the Booting Process
+    - Software Physical Remap
+    - Vector Table Relocation
+    - Running the Firmware From SRAM Using the STM32CubeIDE
+  - Integrated STM32 Bootloader
+    - Starting the STM32 Bootloader from the On-Board Firmware
+    - The Booting Sequence in the STM32CubeIDE Tool-chain
+  - Developing a Custom Bootloader
+    - Vector Table Relocation in STM32F0 Microcontrollers
+    - How to Use the flasher.py Tool
+- Running FreeRTOS
+  - Understanding the Concepts Underlying an RTOS
+  - Configuring FreeRTOS and the CMSIS-RTOS v2 Wrapper
+    - The FreeRTOS Source Tree
+      - How to Configure FreeRTOS Using CubeMX
+  - Thread Management
+    - Thread States
+    - Thread Priorities and Scheduling Policies
+    - Voluntary Release of the Control
+    - The idle Thread
+  - Memory Allocation and Management
+    - Dynamic Memory Allocation Model
+      - heap_1.c
+      - heap_2.c
+      - heap_3.c
+      - heap_4.c
+      - heap_5.c
+      - FreeRTOS Heap Definition
+    - Static Memory Allocation Model
+      - idle Thread Allocation with Static Memory Allocation Model
+    - FreeRTOS and the C stdlib
+      - How to Configure newlib to Handle Concurrency with FreeRTOS
+      - How to Use malloc() and malloc()-dependant newlib Functions With FreeRTOS
+      - STM32CubeMX Approach to Thread-Safety
+    - Memory Pools
+    - Stack Overflow Detection
+  - Synchronization Primitives
+    - Message Queues
+    - Semaphores
+    - Event and Thread Flags
+  - Resources Management and Mutual Exclusion
+    - Mutexes
+      - The Priority Inversion Problem
+      - Recursive Mutexes
+    - Critical Sections
+    - Interrupt Management With an RTOS
+      - FreeRTOS API and Interrupt Priorities
+  - Software Timers
+    - How FreeRTOS Manages Timers
+  - A Case Study: Low-Power Management With an RTOS
+    - The idle Thread Hook
+    - The Tickless Mode in FreeRTOS
+      - A Schema for the tickless Mode
+      - A Custom tickless Mode Policy
+  - Debugging Features
+    - configASSERT() Macro
+    - Run-Time Statistics and Thread State Information
+    - FreeRTOS Debugging in STM32CubeIDE
+    - FreeRTOS Kernel-Aware Debugging in STM32CubeIDE
+  - Alternatives to FreeRTOS
+    - AzureRTOS
+    - ChibiOS
+    - Contiki OS
+    - OpenRTOS
+- Advanced Debugging Techniques
+  - Understanding Cortex-M Fault-Related Exceptions
+    - The Cortex-M Exception Entrance Sequence and the ARM Calling Convention
+      - How to Interpret the Content of the LR Register on Exception Entrance
+    - Fault Exceptions and Faults Analysis
+      - Memory Management Exception
+      - Bus Fault Exception
+      - Usage Fault Exception
+      - Hard Fault Exception
+      - Secure Fault Exception
+      - Enabling Optional Fault Handlers
+      - Fault Analysis in Cortex-M0/0+ Based Processors
+  - STM32CubeIDE Advanced Debugging Features
+    - Expressions and Live Expressions
+      - Memory Monitors
+    - Watchpoints
+    - Instruction Stepping Mode
+    - SFRs View
+    - Fault Analyzer
+      - Tracing Fault-Related Registers Without the IDE Support
+    - Build Analyzer
+    - Static Stack Analyzer
+  - Serial Wire Viewer Tracing
+    - Enabling SWV Debugging
+    - Configuring SWV
+    - SWV Views
+      - SWV Trace Log
+      - SWV Exception Trace Log
+      - SWV Data Trace
+      - SWV Data Trace Timeline Graph
+      - SWV ITM Data Console
+      - SWV Statistical Profiling
+  - Debugging Aids from the CubeHAL
+  - External Debuggers
+  - Debugging two Nucleo Boards Simultaneously
+  - ARM Semihosting
+    - Enable Semihosting on a Project
+    - Semihosting Drawbacks
+    - Understanding How Semihosting Works
+- FAT Filesystem
+  - Introduction to FatFs Library
+    - Adding FatFs Library in Your Projects
+      - The Generic Disk Interface API
+      - The Implementation of a Driver to Access SD Cards in SPI Mode
+    - Relevant FatFs Structures and Functions
+      - Mounting a Filesystem
+      - Opening a File
+      - Reading From/Writing into a File
+      - Creating and Opening a Directory
+    - How to Configure the FatFs Library
+- Develop IoT Applications
+  - Solutions Offered by STM to Develop IoT Applications
+  - The W5500 Ethernet Controller
+    - How to Use the W5500 Shield and the ioLibrary_Driver Module
+      - Configuring the SPI Interface
+      - Configuring the Socket Buffers and the Network Interface
+    - Socket APIs
+      - Handling Sockets in TCP Mode
+      - Handling Sockets in UDP Mode
+    - I/O Retargeting to a TCP/IP Socket
+    - Building up an HTTP Server
+      - A Web-Based Oscilloscope
+- Universal Serial Bus
+  - USB 2.0 Specification Overview
+    - The ``Before-To-Die'' Guide to USB
+    - USB Physical Architecture Overview
+    - USB Logical Architecture Overview
+      - Device States
+      - Communication Endpoints
+    - USB 2.0 Communication Protocol Overview
+      - Packet Types
+      - Transaction Types
+        - Control Transactions
+        - IN/OUT Transactions
+      - Device and Interface Descriptors
+        - Device Descriptors
+        - Configuration Descriptors
+        - Interface Descriptors
+        - Endpoint Descriptors
+        - String Descriptors
+      - USB Classes
+  - STM32 USB Device Library
+    - Understanding Generated Code
+    - USB Initialization Sequence
+    - USB Enumeration Sequence
+    - The USB CDC Class
+      - USB CDC Descriptors
+      - USB CDC Class Initialization
+      - USB CDC Class Operations
+  - Building Custom USB Devices
+    - The USB HID Class
+      - USB HID Descriptors
+      - Overview of the Report Descriptor
+      - USB HID Class-Specific Requests
+    - Building a Vendor-Specific USB HID Device
+  - Debugging USB Devices
+    - Software Sniffers and Analyzers
+    - USB Hardware Analyzers
+  - Optimizing the STM32 USB Device Library
+  - Going to the Market
+- Getting Started with a New Design
+  - Hardware Design
+    - PCB Layer Stack-Up
+    - MCU Package
+    - Decoupling of Power-Supply Pins
+    - Clocks
+    - Filtering of RESET Pin
+    - Debug Port
+    - Boot Mode
+    - Pay attention to ``pin-to-pin'' Compatibility…
+    - …And to Selecting the Right Peripherals
+    - The Role of CubeMX During the Board Design Stage
+    - Board Layout Strategies
+  - Software Design
+    - Generating the binary image for production
+
+## Appendix
+
+- A. Miscellaneous HAL functions and STM32 features
+  - Force MCU reset from the firmware
+  - STM32 96-bit Unique CPU ID
+- B. Troubleshooting Guide
+  - STM32CubeIDE Issues
+    - Debugging Continuously Breaks at Every Instruction During a Debug Session
+    - The Step-by-Step Debugging is Really Slow
+    - The Firmware Works Only Under a Debug Session
+  - STM32 Related Issues
+    - The Microcontroller Does Not Boot Correctly
+    - It is Not Possible to Flash or to Debug the MCU
+- C. Nucleo pin-out
+  - Nucleo-G474RE
+    - Arduino compatible headers
+    - Morpho headers
+  - Nucleo-F446RE
+    - Arduino compatible headers
+    - Morpho headers
+  - Nucleo-F401RE
+    - Arduino compatible headers
+    - Morpho headers
+  - Nucleo-F303RE
+    - Arduino compatible headers
+    - Morpho headers
+  - Nucleo-F103RB
+    - Arduino compatible headers
+    - Morpho headers
+  - Nucleo-F072RB
+    - Arduino compatible headers
+    - Morpho headers
+  - Nucleo-L476RG
+    - Arduino compatible headers
+    - Morpho headers
+  - Nucleo-L152RE
+    - Arduino compatible headers
+    - Morpho headers
+  - Nucleo-L073R8
+    - Arduino compatible headers
+    - Morpho headers
+- D. Differences with the 1st edition
+  - Chapter 1
+  - Chapter 2
+  - Chapter 3 and 4
+  - Chapter 5
+  - Chapter 6
+  - Chapter 7
+  - Chapter 8
+  - Chapter 9
+  - Chapter 10
+  - Chapter 11
+  - Chapter 12-22
+  - Chapter 23
+  - Chapter 24
+  - Chapter 25-26
+  - Chapter 27
+  - Chapter 28

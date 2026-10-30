@@ -1,0 +1,5 @@
+# Preserve imported vendor files and existing line endings byte for byte.
+# This affects this repository only, not the user's global Git settings.
+* -text
+# Honor the historical mixed line endings in the imported reference index.
+references/stm32f446re-learning/Nucleo-F446RE/** text=auto

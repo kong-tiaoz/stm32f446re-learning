@@ -1,3 +1,29 @@
-.metadata/
+# Each project owns its generated files; source and VS Code tasks stay visible.
+**/build/
+**/artifacts/*
+!**/artifacts/verification.md
+**/CMakeUserPresets.json
+**/.vscode/launch.json
+**/.cache/
+**/.clangd/
+*.swp
+**/.local/
+/coordination.md
+**/.metadata/
 .DS_Store
-Debug/
+
+# Local textbook conversion; keep personal notes/scripts separate from book text.
+learning/mastering-stm32/chapters/
+learning/mastering-stm32/assets/
+*.epub
+
+# Local credentials and environment files must not be published.
+.env
+.env.*
+!.env.example
+*.token
+credentials*.json
+id_rsa
+id_ed25519
+*.pfx
+*.p12

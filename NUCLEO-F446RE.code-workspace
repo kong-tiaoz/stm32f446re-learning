@@ -1,0 +1,21 @@
+{
+  "folders": [
+    { "name": "型号总目录", "path": "." },
+    { "name": "Mastering STM32 学习", "path": "learning/mastering-stm32" },
+    { "name": "teststartproject", "path": "teststartproject" },
+    { "name": "book-hello-nucleo", "path": "book-hello-nucleo" },
+    { "name": "book-debugging", "path": "book-debugging" },
+    { "name": "参考：stm32f446re-learning", "path": "references/stm32f446re-learning" }
+  ],
+  "settings": {
+    "cmake.useCMakePresets": "always",
+    "cmake.configureOnOpen": false,
+    "[markdown]": { "editor.wordWrap": "on" },
+    "search.exclude": {
+      "**/build": true,
+      "**/artifacts": true,
+      "**/.local": true
+    },
+    "stm32cube-ide-clangd.path": "cube"
+  }
+}

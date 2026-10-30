@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Attach STM32F446RE (no download)",
+      "type": "cortex-debug",
+      "request": "attach",
+      "servertype": "stlink",
+      "device": "STM32F446RE",
+      "interface": "swd",
+      "cwd": "${workspaceFolder}",
+      "executable": "${workspaceFolder}/build/Debug/book-hello-nucleo.elf",
+      "showDevDebugOutput": "none"
+    }
+  ]
+}

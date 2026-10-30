@@ -1,0 +1,79 @@
+[
+  {
+    "File": "UM1724_Nucleo64_MB1136.pdf",
+    "Url": "https://www.st.com/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf",
+    "DownloadUrl": "https://mp.stmicroelectronics.cn/resource/en/user_manual/um1724-stm32-nucleo64-boards-mb1136-stmicroelectronics.pdf",
+    "DownloadedDate": "2026-10-30",
+    "Revision": "UM1724 Rev 17",
+    "Pages": 91,
+    "Bytes": 3781926,
+    "SHA256": "576D9BEE3BC32C8EE70BF0D77CF9494CEC06EA7C1D9FF98EEBF2738CB9314A14",
+    "Validation": "PDF parsed; first and last pages extracted successfully"
+  },
+  {
+    "File": "MB1136_C03_schematic.pdf",
+    "Url": "https://www.st.com/resource/en/schematic_pack/mb1136-default-c03_schematic.pdf",
+    "DownloadUrl": "https://mp.stmicroelectronics.cn/resource/en/schematic_pack/mb1136-default-c03_schematic.pdf",
+    "DownloadedDate": "2026-10-30",
+    "Revision": "MB1136 C03",
+    "Pages": 5,
+    "Bytes": 1315512,
+    "SHA256": "71117604B6A4CE7935902C022AC99A8474F26E2F7C235C505E35E60703A13CCB",
+    "Validation": "PDF parsed; first and last pages extracted successfully"
+  },
+  {
+    "File": "MB1136_C04_schematic.pdf",
+    "Url": "https://www.st.com/resource/en/schematic_pack/mb1136-default-c04_schematic.pdf",
+    "DownloadUrl": "https://mp.stmicroelectronics.cn/resource/en/schematic_pack/mb1136-default-c04_schematic.pdf",
+    "DownloadedDate": "2026-10-30",
+    "Revision": "MB1136 C04",
+    "Pages": 5,
+    "Bytes": 1314815,
+    "SHA256": "401F40CA598B008050E7749B5847E93CA8AA83E9A0BAE4CBCBE7A016159E57C1",
+    "Validation": "PDF parsed; first and last pages extracted successfully"
+  },
+  {
+    "File": "STM32F446RE_datasheet.pdf",
+    "Url": "https://www.st.com/resource/en/datasheet/stm32f446re.pdf",
+    "DownloadUrl": "https://mp.stmicroelectronics.cn/resource/en/datasheet/stm32f446re.pdf",
+    "DownloadedDate": "2026-10-30",
+    "Revision": "DS10693 Rev 11",
+    "Pages": 197,
+    "Bytes": 2895510,
+    "SHA256": "5CEA36B6DC2B623DBE7710B7B75BCB628043AA3BCA0F981B7D493C46CC4E6327",
+    "Validation": "PDF parsed; first and last pages extracted successfully"
+  },
+  {
+    "File": "RM0390_STM32F446_reference_manual.pdf",
+    "Url": "https://www.st.com/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+    "DownloadUrl": "https://mp.stmicroelectronics.cn/resource/en/reference_manual/rm0390-stm32f446xx-advanced-armbased-32bit-mcus-stmicroelectronics.pdf",
+    "DownloadedDate": "2026-10-30",
+    "Revision": "RM0390 Rev 9",
+    "Pages": 1321,
+    "Bytes": 16279423,
+    "SHA256": "2F3A98A18AA6347A1132F60FE19FDE3190898B951C2721A2C35520D77C618094",
+    "Validation": "PDF parsed; first and last pages extracted successfully"
+  },
+  {
+    "File": "PM0214_CortexM4_programming_manual.pdf",
+    "Url": "https://www.st.com/resource/en/programming_manual/pm0214-stm32-cortexm4-mcus-and-mpus-programming-manual-stmicroelectronics.pdf",
+    "DownloadUrl": "https://mp.stmicroelectronics.cn/resource/en/programming_manual/pm0214-stm32-cortexm4-mcus-and-mpus-programming-manual-stmicroelectronics.pdf",
+    "DownloadedDate": "2026-10-30",
+    "Revision": "PM0214 Rev 10",
+    "Pages": 262,
+    "Bytes": 2732268,
+    "SHA256": "FB54012A46C674A26DEE56BC8CDFA281315F78634F18998001144980B08D1B03",
+    "Validation": "PDF parsed; first and last pages extracted successfully"
+  },
+  {
+    "File": "ES0298_STM32F446_errata.pdf",
+    "Url": "https://www.st.com/resource/en/errata_sheet/es0298-stm32f446xcxe-device-errata-stmicroelectronics.pdf",
+    "DownloadUrl": "https://mp.stmicroelectronics.cn/resource/en/errata_sheet/es0298-stm32f446xcxe-device-errata-stmicroelectronics.pdf",
+    "DownloadedDate": "2026-10-30",
+    "Revision": "ES0298 - Rev 8",
+    "Pages": 41,
+    "Bytes": 1718471,
+    "SHA256": "83EEB33A12DC29F5868B78FBC0D87A4AC255E9C4E96FE12D76D8531A78ED108C",
+    "Validation": "PDF parsed; first and last pages extracted successfully"
+  }
+]

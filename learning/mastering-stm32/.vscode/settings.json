@@ -1,0 +1,14 @@
+{
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "editor.rulers": []
+  },
+  "markdown.preview.fontSize": 17,
+  "markdown.preview.lineHeight": 1.65,
+  "files.exclude": { ".local": true }
+}
