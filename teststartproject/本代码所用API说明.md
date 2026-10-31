@@ -17,6 +17,16 @@
 
 当前寄存器别名：RCC_CR、RCC_CFGR、RCC_AHB1ENR；GPIOA_MODER、GPIOA_OTYPER、GPIOA_OSPEEDR、GPIOA_PUPDR、GPIOA_BSRR；SCB_VTOR、SCB_CPACR；SYSTICK_CTRL、SYSTICK_LOAD、SYSTICK_VAL。另直接写入 0xE000ED23 设置 SysTick 优先级。LED_PIN 是位掩码常量，不是 API。
 
+### 本工程源码示例
+
+来源：[src/main.c](src/main.c)，第 2–4 行。仅解释历史实现；DSB/ISB 共用一条内联汇编语句。
+
+```c
+
+#define REG32(address) (*(volatile uint32_t *)(address))
+#define RCC_CR        REG32(0x40023800u)
+```
+
 ## DSB：数据同步屏障
 
 | 问题 | 答案 |
@@ -28,6 +38,16 @@
 | 调用前准备什么？ | 本工程先配置 CPACR 的浮点访问权限 |
 | 调用后验证什么？ | 配合 ISB，确保后续执行基于更新后的系统设置 |
 
+### 本工程源码示例
+
+来源：[src/main.c](src/main.c)，第 41–43 行。仅解释历史实现；DSB/ISB 共用一条内联汇编语句。
+
+```c
+    SCB_CPACR |= 0xFu << 20;
+    __asm volatile ("dsb\nisb" ::: "memory");
+
+```
+
 ## ISB：指令同步屏障
 
 | 问题 | 答案 |
@@ -38,6 +58,16 @@
 | 返回什么？ | 无函数返回值 |
 | 调用前准备什么？ | 完成相关系统设置并按需要执行 DSB |
 | 调用后验证什么？ | 后续指令正常执行；本工程未单独测量屏障效果 |
+
+### 本工程源码示例
+
+来源：[src/main.c](src/main.c)，第 41–43 行。仅解释历史实现；DSB/ISB 共用一条内联汇编语句。
+
+```c
+    SCB_CPACR |= 0xFu << 20;
+    __asm volatile ("dsb\nisb" ::: "memory");
+
+```
 
 ## WFI：等待中断
 
@@ -51,3 +81,13 @@
 | 调用后验证什么？ | 毫秒计数推进、两短一长闪灯；调试重连须独立验证 |
 
 main 是启动代码调用的应用入口；SysTick_Handler 是异常入口，递增 g_status.milliseconds。这些是项目实现的入口，不是外部 HAL API。历史实测见 [artifacts/verification.md](artifacts/verification.md)。维护格式见[统一模板](../docs/API说明模板.md)。
+
+### 本工程源码示例
+
+来源：[src/main.c](src/main.c)，第 75–77 行。仅解释历史实现；DSB/ISB 共用一条内联汇编语句。
+
+```c
+        g_status.phase_ms = phase;
+        __asm volatile ("wfi");
+    }
+```
