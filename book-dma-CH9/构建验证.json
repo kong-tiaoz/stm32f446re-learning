@@ -1,0 +1,76 @@
+{
+  "Project": "book-dma-CH9",
+  "Date": "2026-10-31",
+  "Toolchain": "GNU Arm GCC 14.3.1 / CMake 4.3.1 / Ninja 1.13.2",
+  "OriginalFileCount": 80,
+  "ReferenceHashesUnchanged": true,
+  "AllOriginalFilesRetained": true,
+  "OnlyDeclaredOriginalFilesChanged": true,
+  "VendorHashesUnchanged": true,
+  "AnnotatedFileCount": 7,
+  "ChineseCommentCount": 552,
+  "ApplicationBusinessTokensUnchanged": true,
+  "APIExamplesCheckedAgainstActualSource": 43,
+  "Results": [
+    {
+      "Preset": "EX1-Debug",
+      "Main": "Core/Src/main-ex1.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:39:36.1589370Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX1-Debug/book-dma-CH9-EX1.elf",
+          "Bytes": 1099128,
+          "SHA256": "23156814da863f95ee0e2562f59e20107a90885b7b41e19e0f98cd122f2f72d1"
+        },
+        "HEX": {
+          "Path": "build/EX1-Debug/book-dma-CH9-EX1.hex",
+          "Bytes": 21743,
+          "SHA256": "23dde96b4e521993097b4478253f9234b8807fba477655391af371be5c728e3d"
+        },
+        "BIN": {
+          "Path": "build/EX1-Debug/book-dma-CH9-EX1.bin",
+          "Bytes": 7760,
+          "SHA256": "8bc99b72a1eba4b505eadffdcadd386de4f3197324b40805ff58e396485d8c32"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    },
+    {
+      "Preset": "EX2-Debug",
+      "Main": "Core/Src/main-ex2.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:39:41.7457529Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX2-Debug/book-dma-CH9-EX2.elf",
+          "Bytes": 1100052,
+          "SHA256": "85ad8467c028528407537b20313d0a1187edb5ec412fd2e756ad65493d582bbb"
+        },
+        "HEX": {
+          "Path": "build/EX2-Debug/book-dma-CH9-EX2.hex",
+          "Bytes": 20819,
+          "SHA256": "10ef82e581ce195158a613cd214971a594c4b6bdc510fa0cb0656969cbf01ee5"
+        },
+        "BIN": {
+          "Path": "build/EX2-Debug/book-dma-CH9-EX2.bin",
+          "Bytes": 7428,
+          "SHA256": "e790b5fcd68e2c5be7253b0f7a4041cbf6c9a18f277ae6f45c0c2b4debaffbc7"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    }
+  ]
+}

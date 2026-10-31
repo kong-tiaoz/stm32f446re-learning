@@ -1,0 +1,52 @@
+[
+  {
+    "name": "CH20-EX1",
+    "sources": [
+      "main-ex1.c"
+    ],
+    "includes": [],
+    "defines": [],
+    "linker": "ldscript.ld",
+    "nostart": true
+  },
+  {
+    "name": "CH20-EX2",
+    "sources": [
+      "main-ex2.c"
+    ],
+    "includes": [],
+    "defines": [],
+    "linker": "ldscript2.ld",
+    "nostart": true
+  },
+  {
+    "name": "CH20-EX3",
+    "sources": [
+      "main-ex3.c"
+    ],
+    "includes": [],
+    "defines": [],
+    "linker": "ldscript3.ld",
+    "nostart": true
+  },
+  {
+    "name": "CH20-EX4",
+    "sources": [
+      "main-ex4.c"
+    ],
+    "includes": [],
+    "defines": [],
+    "linker": "ldscript4.ld",
+    "nostart": true
+  },
+  {
+    "name": "CH20-EX5",
+    "sources": [
+      "main-ex5.c"
+    ],
+    "includes": [],
+    "defines": [],
+    "linker": "ldscript5.ld",
+    "nostart": true
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "ex1",
+    "main": "main-ex1.c",
+    "origin": "CH12-EX1"
+  },
+  {
+    "name": "ex2",
+    "main": "main-ex2.c",
+    "origin": "CH12-EX2"
+  },
+  {
+    "name": "ex3",
+    "main": "main-ex3.c",
+    "origin": "CH12-EX3"
+  }
+]

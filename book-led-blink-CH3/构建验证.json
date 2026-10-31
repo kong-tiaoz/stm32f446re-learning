@@ -1,0 +1,46 @@
+{
+  "Project": "book-led-blink-CH3",
+  "Date": "2026-10-31",
+  "Toolchain": "GNU Arm GCC 14.3.1 / CMake 4.3.1 / Ninja 1.13.2",
+  "OriginalFileCount": 78,
+  "ReferenceHashesUnchanged": true,
+  "AllOriginalFilesRetained": true,
+  "OnlyDeclaredOriginalFilesChanged": true,
+  "VendorHashesUnchanged": true,
+  "AnnotatedFileCount": 6,
+  "ChineseCommentCount": 418,
+  "ApplicationBusinessTokensUnchanged": true,
+  "APIExamplesCheckedAgainstActualSource": 30,
+  "Results": [
+    {
+      "Preset": "EX1-Debug",
+      "Main": "Core/Src/main.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:38:54.8603056Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX1-Debug/book-led-blink-CH3-EX1.elf",
+          "Bytes": 1071000,
+          "SHA256": "ec4d84c0389fd356aa3c298b89f3afa8fa86eeed99b1b84f902a65d5e724753f"
+        },
+        "HEX": {
+          "Path": "build/EX1-Debug/book-led-blink-CH3-EX1.hex",
+          "Bytes": 16409,
+          "SHA256": "27092e56bffe620fb0250ad42745db87b5c89ded96e3e806dc7a3eced7dc2220"
+        },
+        "BIN": {
+          "Path": "build/EX1-Debug/book-led-blink-CH3-EX1.bin",
+          "Bytes": 5800,
+          "SHA256": "7b4978b6b32111ff16c3ca195876c0836c4db32e1e4f918bf85193fe9c257405"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    }
+  ]
+}

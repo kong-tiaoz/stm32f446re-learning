@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-31",
+  "compiler": "Arm GNU Toolchain 14.3.1+st.2",
+  "cmake": "4.3.1+st.1",
+  "ninja": "1.13.2+st.1",
+  "results": [
+    {
+      "preset": "CH20-EX1",
+      "exitCode": 0,
+      "warnings": 0,
+      "log": "artifacts/build-CH20-EX1.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH20-EX2",
+      "exitCode": 0,
+      "warnings": 0,
+      "log": "artifacts/build-CH20-EX2.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH20-EX3",
+      "exitCode": 0,
+      "warnings": 0,
+      "log": "artifacts/build-CH20-EX3.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH20-EX4",
+      "exitCode": 0,
+      "warnings": 0,
+      "log": "artifacts/build-CH20-EX4.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH20-EX5",
+      "exitCode": 0,
+      "warnings": 0,
+      "log": "artifacts/build-CH20-EX5.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    }
+  ],
+  "imageChecks": [
+    {
+      "preset": "CH20-EX1",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x0800006E",
+      "bytes": 110,
+      "stack": "0x20020000",
+      "resetVector": "0x08000009",
+      "elfSha256": "aef1fb6e49987c52d042db24c250a6dde982838f47956acf432455265442ff1d"
+    },
+    {
+      "preset": "CH20-EX2",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x080000CC",
+      "bytes": 204,
+      "stack": "0x20020000",
+      "resetVector": "0x08000009",
+      "elfSha256": "7edc6ce22baee3fd283f51462ff387ae2223065bf20a86adf0c17e167a83df76"
+    },
+    {
+      "preset": "CH20-EX3",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x080000EE",
+      "bytes": 238,
+      "stack": "0x20020000",
+      "resetVector": "0x08000009",
+      "elfSha256": "97d3a24e021e22a9cd10aea415f295999dbde9bf546db26558a67ddd6c335885"
+    },
+    {
+      "preset": "CH20-EX4",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08000590",
+      "bytes": 1424,
+      "stack": "0x20020000",
+      "resetVector": "0x08000009",
+      "elfSha256": "63fec9e6a690946af6225b3fc9f574eff8de2a3015de3525f7c440d770f475a1"
+    },
+    {
+      "preset": "CH20-EX5",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x0800037C",
+      "bytes": 892,
+      "stack": "0x20020000",
+      "resetVector": "0x08000009",
+      "elfSha256": "650a2194f966739b3eac8b8808910b5cd82b3708b4c8beeaaba04dda35642b33"
+    }
+  ],
+  "sourceIntegrity": {
+    "chapter": "CH20",
+    "upstreamFiles": 18,
+    "byteIdentical": 13,
+    "commentOrWhitespaceOnly": [
+      "main-ex1.c",
+      "main-ex2.c",
+      "main-ex3.c",
+      "main-ex4.c",
+      "main-ex5.c"
+    ],
+    "explicitPortDifferences": [],
+    "unexpected": [],
+    "upstreamSha256Verified": true,
+    "hardwareConnected": false
+  },
+  "apiDocumentation": {
+    "cards": 4,
+    "sourceExamplesVerified": true,
+    "sixQuestionsPerCard": true,
+    "businessTokensPreservedExceptListedPorts": true
+  },
+  "hardwareConnected": false,
+  "flashed": false,
+  "hardwareObserved": false
+}

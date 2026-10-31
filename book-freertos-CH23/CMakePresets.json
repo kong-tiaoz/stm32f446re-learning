@@ -1,0 +1,119 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "CH23-EX1",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH23-EX1",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH23-EX1"
+      }
+    },
+    {
+      "name": "CH23-EX2",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH23-EX2",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH23-EX2"
+      }
+    },
+    {
+      "name": "CH23-EX3",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH23-EX3",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH23-EX3"
+      }
+    },
+    {
+      "name": "CH23-EX4",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH23-EX4",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH23-EX4"
+      }
+    },
+    {
+      "name": "CH23-EX5",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH23-EX5",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH23-EX5"
+      }
+    },
+    {
+      "name": "CH23-EX6",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH23-EX6",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH23-EX6"
+      }
+    },
+    {
+      "name": "CH23-EX7",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH23-EX7",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH23-EX7"
+      }
+    },
+    {
+      "name": "CH23-EX8",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH23-EX8",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH23-EX8"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "CH23-EX1",
+      "configurePreset": "CH23-EX1"
+    },
+    {
+      "name": "CH23-EX2",
+      "configurePreset": "CH23-EX2"
+    },
+    {
+      "name": "CH23-EX3",
+      "configurePreset": "CH23-EX3"
+    },
+    {
+      "name": "CH23-EX4",
+      "configurePreset": "CH23-EX4"
+    },
+    {
+      "name": "CH23-EX5",
+      "configurePreset": "CH23-EX5"
+    },
+    {
+      "name": "CH23-EX6",
+      "configurePreset": "CH23-EX6"
+    },
+    {
+      "name": "CH23-EX7",
+      "configurePreset": "CH23-EX7"
+    },
+    {
+      "name": "CH23-EX8",
+      "configurePreset": "CH23-EX8"
+    }
+  ]
+}

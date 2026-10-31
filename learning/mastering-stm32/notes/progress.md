@@ -35,6 +35,10 @@
 
 用户随后确认“我现在 LD2 绿灯一闪一闪”，已记录为当时固件有可见闪烁现象，未把它扩大为精确 100/900 ms 时序或复位测试通过。此前闪灯任务入口为 **Flash (backup + verify) book-hello-nucleo**；本计划下一模块使用 **book-debugging**，选择任务时仍须核对文件夹名。具体亮灭节奏、黑色 RESET 和断电重启仍待分别观察；GDB/断点和 CH5 工程尚未验收。手动固件包仍位于 `book-hello-nucleo/artifacts/manual-flash/`，完整日志与备份仅本地保留。
 
+## 教材章节学习副本
+
+全部 15 个参考章节已整理为同级独立学习工程（49 个 Debug 子目标已构建，ELF/HEX/BIN 齐全），入口见[章节工程索引](../../../docs/book-examples-index.md)。原参考目录和原有两个教材适配工程保留。新的 [book-uart-debugging-CH5](../../../book-uart-debugging-CH5/README.md) 提供逐行中文注释与各接口六问说明，可用于模块 1 的源码阅读；原 book-debugging 仍可使用，构建、调试及烧录时必须选定同一工程，不混用 ELF。新章节的构建结果以索引与各工程记录为准，本次未烧录，不能记作串口、LED、USB 或网络已验收。
+
 ## 本次学习记录模板
 
 - 学习日期、功能模块与教材小节：待填写。

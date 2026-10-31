@@ -1,0 +1,112 @@
+{
+  "Project": "book-uart-CH8",
+  "Date": "2026-10-31",
+  "Toolchain": "GNU Arm GCC 14.3.1 / CMake 4.3.1 / Ninja 1.13.2",
+  "OriginalFileCount": 85,
+  "ReferenceHashesUnchanged": true,
+  "AllOriginalFilesRetained": true,
+  "OnlyDeclaredOriginalFilesChanged": true,
+  "VendorHashesUnchanged": true,
+  "AnnotatedFileCount": 11,
+  "ChineseCommentCount": 843,
+  "ApplicationBusinessTokensUnchanged": true,
+  "APIExamplesCheckedAgainstActualSource": 56,
+  "Results": [
+    {
+      "Preset": "EX1-Debug",
+      "Main": "Core/Src/main-ex1.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:39:17.9493970Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [
+        "F:/project/NUCLEO-F446RE/book-uart-CH8/Core/Src/main-ex1.c:143:45: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]"
+      ],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX1-Debug/book-uart-CH8-EX1.elf",
+          "Bytes": 1156984,
+          "SHA256": "d9e63e1eb1e23295020ae4652c7678e18edc892349189e50409eca97d1deebe4"
+        },
+        "HEX": {
+          "Path": "build/EX1-Debug/book-uart-CH8-EX1.hex",
+          "Bytes": 110144,
+          "SHA256": "86f6af7e8d61cd313c5a4cac013ef175e3cd5f1e44ad85f7c3a39e89793c0d96"
+        },
+        "BIN": {
+          "Path": "build/EX1-Debug/book-uart-CH8-EX1.bin",
+          "Bytes": 39192,
+          "SHA256": "cd0328a055ad55a92695c15f76e7e5db4a27e473fb883827a2f93b4b61b064dd"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    },
+    {
+      "Preset": "EX2-Debug",
+      "Main": "Core/Src/main-ex2.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:39:23.8760457Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [
+        "F:/project/NUCLEO-F446RE/book-uart-CH8/Core/Src/main-ex2.c:186:45: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]"
+      ],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX2-Debug/book-uart-CH8-EX2.elf",
+          "Bytes": 1172104,
+          "SHA256": "3d546dd18979ed4e9bc297c44f543657251bb66dfc566b6a6e9ff7eeda901130"
+        },
+        "HEX": {
+          "Path": "build/EX2-Debug/book-uart-CH8-EX2.hex",
+          "Bytes": 114162,
+          "SHA256": "44b480686f0a8de77622ec4ffddab5574a2b53eaf1e85c67a63127b1b0cfba4f"
+        },
+        "BIN": {
+          "Path": "build/EX2-Debug/book-uart-CH8-EX2.bin",
+          "Bytes": 40616,
+          "SHA256": "bb80a2ee607923c13a36ab3bfd911ae627a8f24a263ab2b753cae3887f865d9a"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    },
+    {
+      "Preset": "EX3-Debug",
+      "Main": "Core/Src/main-ex3.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:39:29.5850831Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [
+        "F:/project/NUCLEO-F446RE/book-uart-CH8/Core/Src/main-ex3.c:195:45: warning: 'sprintf' may write a terminating nul past the end of the destination [-Wformat-overflow=]"
+      ],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX3-Debug/book-uart-CH8-EX3.elf",
+          "Bytes": 1176864,
+          "SHA256": "318f416738edaa36011e4758f4ef065affdb0dd7fb0167cc26dd1f0fdc044f0b"
+        },
+        "HEX": {
+          "Path": "build/EX3-Debug/book-uart-CH8-EX3.hex",
+          "Bytes": 113892,
+          "SHA256": "6b26271708f6d84277c83ef624ea9e9e7406db082124d47c8af88657aea14d21"
+        },
+        "BIN": {
+          "Path": "build/EX3-Debug/book-uart-CH8-EX3.bin",
+          "Bytes": 40520,
+          "SHA256": "c74e3701b78cc86cb4c464089db6048ef0df1d8263811e25003b8948a3d8a031"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "Project": "book-uart-CH8",
+  "ExternalUniqueCount": 34,
+  "HALFunctions": [
+    "HAL_Delay",
+    "HAL_GPIO_DeInit",
+    "HAL_GPIO_Init",
+    "HAL_GPIO_ReadPin",
+    "HAL_GPIO_TogglePin",
+    "HAL_GPIO_WritePin",
+    "HAL_IncTick",
+    "HAL_Init",
+    "HAL_NVIC_EnableIRQ",
+    "HAL_NVIC_SetPriority",
+    "HAL_NVIC_SetPriorityGrouping",
+    "HAL_RCC_ClockConfig",
+    "HAL_RCC_OscConfig",
+    "HAL_UART_GetState",
+    "HAL_UART_IRQHandler",
+    "HAL_UART_Init",
+    "HAL_UART_Receive",
+    "HAL_UART_Receive_IT",
+    "HAL_UART_Transmit",
+    "HAL_UART_Transmit_IT"
+  ],
+  "HALMacros": [
+    "__HAL_PWR_VOLTAGESCALING_CONFIG",
+    "__HAL_RCC_GPIOA_CLK_ENABLE",
+    "__HAL_RCC_GPIOB_CLK_ENABLE",
+    "__HAL_RCC_GPIOC_CLK_ENABLE",
+    "__HAL_RCC_GPIOH_CLK_ENABLE",
+    "__HAL_RCC_PWR_CLK_ENABLE",
+    "__HAL_RCC_SYSCFG_CLK_ENABLE",
+    "__HAL_RCC_USART2_CLK_DISABLE",
+    "__HAL_RCC_USART2_CLK_ENABLE"
+  ],
+  "CMSIS": [
+    "__disable_irq"
+  ],
+  "CStandardLibrary": [
+    "atoi",
+    "memset",
+    "sprintf",
+    "strlen"
+  ],
+  "ProjectInterfaces": [
+    "main",
+    "printWelcomeMessage",
+    "readUserInput",
+    "processUserInput",
+    "SystemClock_Config",
+    "MX_USART2_UART_Init",
+    "MX_GPIO_Init",
+    "Error_Handler",
+    "USART2_IRQHandler",
+    "HAL_UART_RxCpltCallback",
+    "performCriticalTasks",
+    "UART_Transmit",
+    "HAL_UART_TxCpltCallback",
+    "RingBuffer_GetFreeSpace",
+    "RingBuffer_GetDataLength",
+    "RingBuffer_Init",
+    "RingBuffer_Read",
+    "RingBuffer_Write",
+    "HAL_MspInit",
+    "HAL_UART_MspInit",
+    "HAL_UART_MspDeInit",
+    "SysTick_Handler"
+  ],
+  "ScopeFiles": [
+    "Core/Src/main-ex1.c",
+    "Core/Src/main-ex2.c",
+    "Core/Src/main-ex3.c",
+    "Core/Src/main.c",
+    "Core/Src/ringbuffer.c",
+    "Core/Src/stm32f4xx_hal_msp.c",
+    "Core/Src/stm32f4xx_it.c"
+  ]
+}

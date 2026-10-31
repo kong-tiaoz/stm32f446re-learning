@@ -1,0 +1,87 @@
+{
+  "Method": "C token序列对比：忽略注释和字符串外空白，保留字符串/字符字面量；每个下列文件比较复制前原件与加注释后内容。",
+  "Files": [
+    {
+      "Path": "Core/Src/main-ex1.c",
+      "OriginalSHA256": "2cb7b80c9ab5b70444949fd08c3a8078e38f9e5b29c3cea09f72d1e184ecc8fa",
+      "AnnotatedSHA256": "71080aa4ca994d58a1543f8454f5dff4a4798a7a7c36d77b2a75dd42d46154a4",
+      "AddedChineseComments": 110,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Src/main-ex2.c",
+      "OriginalSHA256": "ea62cffb0ff4fb7fa6dd6b7a5149a1bd3eab5acd60d8b8fea357af2cb1d0db81",
+      "AnnotatedSHA256": "035426b53e181d87e3ae8fc583a2f882ceee09a1057dd59605c49d2b4ef2da6f",
+      "AddedChineseComments": 126,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Src/main-ex3.c",
+      "OriginalSHA256": "608a113ebe7d56598d0475219a6952c8439934975822fd640ec759894c20fdf4",
+      "AnnotatedSHA256": "f71c03b313b24bb1f1f3d3b50e014689ba2587d88d1b36759dc92d285e4060ef",
+      "AddedChineseComments": 137,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Src/main.c",
+      "OriginalSHA256": "16fc73e171d745f78c55d56744e385db38c81eea65f7f36c81d40932d1ae34ea",
+      "AnnotatedSHA256": "0bbf9e15ee1abc14a8cabfae43f58bce4ba4d39ee01ae1ad03e0258d8fe75497",
+      "AddedChineseComments": 68,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Src/ringbuffer.c",
+      "OriginalSHA256": "6d8a6831242558bb491cf61b5a7f3af22360a60e3de35eb3895bc818fc14f603",
+      "AnnotatedSHA256": "2f4300b41c8790ca43ae4ef2766a6e577d4e0ca63dfb9be9b1818b8141122d77",
+      "AddedChineseComments": 31,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Src/stm32f4xx_hal_msp.c",
+      "OriginalSHA256": "b978f5fae48a45d97a3890c12c84c3fa9b442d050e5c9379acc13fcd3331ca17",
+      "AnnotatedSHA256": "3441a552d8c76c3349d80490e39344b211bb8779b1ffc9516b62fb1334999b80",
+      "AddedChineseComments": 20,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Src/stm32f4xx_it.c",
+      "OriginalSHA256": "bbdd9a64a34b6456ac00ccf3d76557c6d6b1fb8acec0600a8acddc1b5a378c10",
+      "AnnotatedSHA256": "1d9599e597fd1d18b9991bb2a01fb1a42fa1936305a93bd0edd81934e21395c8",
+      "AddedChineseComments": 17,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Inc/main.h",
+      "OriginalSHA256": "ae17bf56e4f18c5ef99da90ec9078c70e7b12be8ade4958b1d40b805703dd9ed",
+      "AnnotatedSHA256": "dca1a2a50589ad0df478ad63d583a2df0030aaf4c594b0dfcb642fdde57d7c9e",
+      "AddedChineseComments": 24,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Inc/stm32f4xx_it.h",
+      "OriginalSHA256": "0c23fb42d2af3d80c0518d238b7651fa9480f290e0985305178bd3220029b0a0",
+      "AnnotatedSHA256": "d5f9e571b44ae94bce29c41861d0b11b96edf7649178bb21f03d92a657eaa613",
+      "AddedChineseComments": 17,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Inc/stm32f4xx_hal_conf.h",
+      "OriginalSHA256": "f88c76a209c1c414409c1ab7f43d675755ee2123129a05edd8eb3fc9f0d9ebc8",
+      "AnnotatedSHA256": "dfb004a88dd9ccd35d9a2dfda429cd1d331143e54844ce2b87e0965332eeb23a",
+      "AddedChineseComments": 270,
+      "BusinessTokensEqual": true
+    },
+    {
+      "Path": "Core/Inc/ringbuffer.h",
+      "OriginalSHA256": "9e04ff7e0e6fe33e1cd8ee9ec5048685f73ad5e97cb6421a6de6a2f140a6a88a",
+      "AnnotatedSHA256": "ec2b5ce8edce94faa758971ad9dd65afeda8b1244d3cdf2ac5c41c4b8664f92c",
+      "AddedChineseComments": 23,
+      "BusinessTokensEqual": true
+    }
+  ],
+  "PortChanges": [
+    "FLASH链接脚本只读构造数组、保留C库",
+    "CH5新增port/uart_seek.c（如适用）"
+  ],
+  "VendorFilesUnchanged": true
+}

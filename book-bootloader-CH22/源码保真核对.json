@@ -1,0 +1,23 @@
+{
+  "chapter": "CH22",
+  "upstreamFiles": 86,
+  "byteIdentical": 74,
+  "commentOrWhitespaceOnly": [
+    "Core/Inc/main.h",
+    "Core/Inc/nucleo_hal_bsp.h",
+    "Core/Inc/stm32f4xx_hal_conf.h",
+    "Core/Inc/stm32f4xx_it.h",
+    "Core/Src/main-app1.c",
+    "Core/Src/main-bootloader.c",
+    "Core/Src/nucleo_hal_bsp.c",
+    "Core/Src/stm32f4xx_hal_msp.c",
+    "Core/Src/stm32f4xx_it.c",
+    "Core/Src/syscalls.c",
+    "Core/Src/sysmem.c",
+    "Core/Src/TI_aes_128.h"
+  ],
+  "explicitPortDifferences": [],
+  "unexpected": [],
+  "upstreamSha256Verified": true,
+  "hardwareConnected": false
+}

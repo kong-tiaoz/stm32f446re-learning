@@ -1,0 +1,49 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "Debug-ex1",
+      "inherits": "base",
+      "displayName": "CH19 ex1 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex1",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex1"
+      }
+    },
+    {
+      "name": "Release-ex1",
+      "inherits": "base",
+      "displayName": "CH19 ex1 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex1",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex1"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug-ex1",
+      "configurePreset": "Debug-ex1"
+    },
+    {
+      "name": "Release-ex1",
+      "configurePreset": "Release-ex1"
+    }
+  ]
+}

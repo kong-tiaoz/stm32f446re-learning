@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-31",
+  "compiler": "Arm GNU Toolchain 14.3.1+st.2",
+  "cmake": "4.3.1+st.1",
+  "ninja": "1.13.2+st.1",
+  "results": [
+    {
+      "preset": "CH22-APP",
+      "exitCode": 0,
+      "warnings": 1,
+      "log": "artifacts/build-CH22-APP.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH22-BOOT",
+      "exitCode": 0,
+      "warnings": 1,
+      "log": "artifacts/build-CH22-BOOT.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    }
+  ],
+  "imageChecks": [
+    {
+      "preset": "CH22-APP",
+      "flashStart": "0x08004000",
+      "flashEndExclusive": "0x08006CDC",
+      "bytes": 11484,
+      "stack": "0x20020000",
+      "resetVector": "0x0800489D",
+      "elfSha256": "c06f1a50e08e2aeeb814c5c3adfc95f8a28273edb929c6cac23b252d494e492f"
+    },
+    {
+      "preset": "CH22-BOOT",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08002A1C",
+      "bytes": 10780,
+      "stack": "0x20020000",
+      "resetVector": "0x08000A11",
+      "elfSha256": "89488ec266eb1618b06ac82f1eb7e6698c71fbb8a84b30bf7690239d4b424292"
+    }
+  ],
+  "sourceIntegrity": {
+    "chapter": "CH22",
+    "upstreamFiles": 86,
+    "byteIdentical": 74,
+    "commentOrWhitespaceOnly": [
+      "Core/Inc/main.h",
+      "Core/Inc/nucleo_hal_bsp.h",
+      "Core/Inc/stm32f4xx_hal_conf.h",
+      "Core/Inc/stm32f4xx_it.h",
+      "Core/Src/main-app1.c",
+      "Core/Src/main-bootloader.c",
+      "Core/Src/nucleo_hal_bsp.c",
+      "Core/Src/stm32f4xx_hal_msp.c",
+      "Core/Src/stm32f4xx_it.c",
+      "Core/Src/syscalls.c",
+      "Core/Src/sysmem.c",
+      "Core/Src/TI_aes_128.h"
+    ],
+    "explicitPortDifferences": [],
+    "unexpected": [],
+    "upstreamSha256Verified": true,
+    "hardwareConnected": false
+  },
+  "apiDocumentation": {
+    "cards": 62,
+    "sourceExamplesVerified": true,
+    "sixQuestionsPerCard": true,
+    "businessTokensPreservedExceptListedPorts": true
+  },
+  "hardwareConnected": false,
+  "flashed": false,
+  "hardwareObserved": false
+}

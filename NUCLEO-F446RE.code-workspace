@@ -27,12 +27,74 @@
     {
       "name": "NUCLEO-F446RE",
       "path": "."
+    },
+    {
+      "name": "book-led-blink-CH3",
+      "path": "book-led-blink-CH3"
+    },
+    {
+      "name": "book-uart-debugging-CH5",
+      "path": "book-uart-debugging-CH5"
+    },
+    {
+      "name": "book-interrupts-CH7",
+      "path": "book-interrupts-CH7"
+    },
+    {
+      "name": "book-uart-CH8",
+      "path": "book-uart-CH8"
+    },
+    {
+      "name": "book-dma-CH9",
+      "path": "book-dma-CH9"
+    },
+    {
+      "name": "book-timers-CH11",
+      "path": "book-timers-CH11"
+    },
+    {
+      "name": "book-adc-CH12",
+      "path": "book-adc-CH12"
+    },
+    {
+      "name": "book-dac-CH13",
+      "path": "book-dac-CH13"
+    },
+    {
+      "name": "book-i2c-CH14",
+      "path": "book-i2c-CH14"
+    },
+    {
+      "name": "book-low-power-CH19",
+      "path": "book-low-power-CH19"
+    },
+    {
+      "name": "book-memory-layout-CH20",
+      "path": "book-memory-layout-CH20"
+    },
+    {
+      "name": "book-bootloader-CH22",
+      "path": "book-bootloader-CH22"
+    },
+    {
+      "name": "book-freertos-CH23",
+      "path": "book-freertos-CH23"
+    },
+    {
+      "name": "book-networking-CH26",
+      "path": "book-networking-CH26"
+    },
+    {
+      "name": "book-usb-CH27",
+      "path": "book-usb-CH27"
     }
   ],
   "settings": {
     "cmake.useCMakePresets": "always",
     "cmake.configureOnOpen": false,
-    "[markdown]": { "editor.wordWrap": "on" },
+    "[markdown]": {
+      "editor.wordWrap": "on"
+    },
     "search.exclude": {
       "**/build": true,
       "**/artifacts": true,

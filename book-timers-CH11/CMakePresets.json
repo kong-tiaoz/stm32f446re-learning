@@ -1,0 +1,329 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "base",
+      "hidden": true,
+      "generator": "Ninja",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "Debug-ex1",
+      "inherits": "base",
+      "displayName": "CH11 ex1 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex1",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex1"
+      }
+    },
+    {
+      "name": "Release-ex1",
+      "inherits": "base",
+      "displayName": "CH11 ex1 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex1",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex1"
+      }
+    },
+    {
+      "name": "Debug-ex2",
+      "inherits": "base",
+      "displayName": "CH11 ex2 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex2",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex2"
+      }
+    },
+    {
+      "name": "Release-ex2",
+      "inherits": "base",
+      "displayName": "CH11 ex2 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex2",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex2"
+      }
+    },
+    {
+      "name": "Debug-ex3",
+      "inherits": "base",
+      "displayName": "CH11 ex3 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex3",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex3"
+      }
+    },
+    {
+      "name": "Release-ex3",
+      "inherits": "base",
+      "displayName": "CH11 ex3 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex3",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex3"
+      }
+    },
+    {
+      "name": "Debug-ex4",
+      "inherits": "base",
+      "displayName": "CH11 ex4 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex4",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex4"
+      }
+    },
+    {
+      "name": "Release-ex4",
+      "inherits": "base",
+      "displayName": "CH11 ex4 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex4",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex4"
+      }
+    },
+    {
+      "name": "Debug-ex5",
+      "inherits": "base",
+      "displayName": "CH11 ex5 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex5",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex5"
+      }
+    },
+    {
+      "name": "Release-ex5",
+      "inherits": "base",
+      "displayName": "CH11 ex5 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex5",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex5"
+      }
+    },
+    {
+      "name": "Debug-ex6",
+      "inherits": "base",
+      "displayName": "CH11 ex6 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex6",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex6"
+      }
+    },
+    {
+      "name": "Release-ex6",
+      "inherits": "base",
+      "displayName": "CH11 ex6 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex6",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex6"
+      }
+    },
+    {
+      "name": "Debug-ex7",
+      "inherits": "base",
+      "displayName": "CH11 ex7 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex7",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex7"
+      }
+    },
+    {
+      "name": "Release-ex7",
+      "inherits": "base",
+      "displayName": "CH11 ex7 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex7",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex7"
+      }
+    },
+    {
+      "name": "Debug-ex8",
+      "inherits": "base",
+      "displayName": "CH11 ex8 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex8",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex8"
+      }
+    },
+    {
+      "name": "Release-ex8",
+      "inherits": "base",
+      "displayName": "CH11 ex8 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex8",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex8"
+      }
+    },
+    {
+      "name": "Debug-ex9",
+      "inherits": "base",
+      "displayName": "CH11 ex9 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex9",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex9"
+      }
+    },
+    {
+      "name": "Release-ex9",
+      "inherits": "base",
+      "displayName": "CH11 ex9 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex9",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex9"
+      }
+    },
+    {
+      "name": "Debug-ex10",
+      "inherits": "base",
+      "displayName": "CH11 ex10 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex10",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex10"
+      }
+    },
+    {
+      "name": "Release-ex10",
+      "inherits": "base",
+      "displayName": "CH11 ex10 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex10",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex10"
+      }
+    },
+    {
+      "name": "Debug-ex11",
+      "inherits": "base",
+      "displayName": "CH11 ex11 Debug",
+      "binaryDir": "${sourceDir}/build/Debug-ex11",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "ex11"
+      }
+    },
+    {
+      "name": "Release-ex11",
+      "inherits": "base",
+      "displayName": "CH11 ex11 Release",
+      "binaryDir": "${sourceDir}/build/Release-ex11",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "BOOK_EXAMPLE": "ex11"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug-ex1",
+      "configurePreset": "Debug-ex1"
+    },
+    {
+      "name": "Release-ex1",
+      "configurePreset": "Release-ex1"
+    },
+    {
+      "name": "Debug-ex2",
+      "configurePreset": "Debug-ex2"
+    },
+    {
+      "name": "Release-ex2",
+      "configurePreset": "Release-ex2"
+    },
+    {
+      "name": "Debug-ex3",
+      "configurePreset": "Debug-ex3"
+    },
+    {
+      "name": "Release-ex3",
+      "configurePreset": "Release-ex3"
+    },
+    {
+      "name": "Debug-ex4",
+      "configurePreset": "Debug-ex4"
+    },
+    {
+      "name": "Release-ex4",
+      "configurePreset": "Release-ex4"
+    },
+    {
+      "name": "Debug-ex5",
+      "configurePreset": "Debug-ex5"
+    },
+    {
+      "name": "Release-ex5",
+      "configurePreset": "Release-ex5"
+    },
+    {
+      "name": "Debug-ex6",
+      "configurePreset": "Debug-ex6"
+    },
+    {
+      "name": "Release-ex6",
+      "configurePreset": "Release-ex6"
+    },
+    {
+      "name": "Debug-ex7",
+      "configurePreset": "Debug-ex7"
+    },
+    {
+      "name": "Release-ex7",
+      "configurePreset": "Release-ex7"
+    },
+    {
+      "name": "Debug-ex8",
+      "configurePreset": "Debug-ex8"
+    },
+    {
+      "name": "Release-ex8",
+      "configurePreset": "Release-ex8"
+    },
+    {
+      "name": "Debug-ex9",
+      "configurePreset": "Debug-ex9"
+    },
+    {
+      "name": "Release-ex9",
+      "configurePreset": "Release-ex9"
+    },
+    {
+      "name": "Debug-ex10",
+      "configurePreset": "Debug-ex10"
+    },
+    {
+      "name": "Release-ex10",
+      "configurePreset": "Release-ex10"
+    },
+    {
+      "name": "Debug-ex11",
+      "configurePreset": "Debug-ex11"
+    },
+    {
+      "name": "Release-ex11",
+      "configurePreset": "Release-ex11"
+    }
+  ]
+}

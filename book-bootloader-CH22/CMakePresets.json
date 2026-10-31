@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "CH22-APP",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH22-APP",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH22-APP"
+      }
+    },
+    {
+      "name": "CH22-BOOT",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH22-BOOT",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH22-BOOT"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "CH22-APP",
+      "configurePreset": "CH22-APP"
+    },
+    {
+      "name": "CH22-BOOT",
+      "configurePreset": "CH22-BOOT"
+    }
+  ]
+}

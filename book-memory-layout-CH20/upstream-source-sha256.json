@@ -1,0 +1,79 @@
+{
+  "upstream": "cnoviello/mastering-stm32-2nd",
+  "commit": "2183a2c5fe25fd9229abd21dab4f23658036dd3f",
+  "source": "references/stm32f446re-learning/Nucleo-F446RE/CH20",
+  "files": [
+    {
+      "path": ".cproject",
+      "sha256": "6943709759855500b673277830bd0de3d17dd4f8ce6229f8fde3c6e66b3b8ed0"
+    },
+    {
+      "path": ".project",
+      "sha256": "4dc052f94d8ff0476711a3a9a383987837ea3e1ade3fdf8166e280f1358c5e1d"
+    },
+    {
+      "path": ".settings/language.settings.xml",
+      "sha256": "4df4704b46b37e2a124171f0260f1c05ca426facedbb5729367551ba26cdb9b2"
+    },
+    {
+      "path": "CH20-EX1 Debug.launch",
+      "sha256": "11d6251bd24e9e91a75086df97852da96b94d150c9dd6ba3e4225c737ec227ed"
+    },
+    {
+      "path": "CH20-EX2 Debug.launch",
+      "sha256": "439d6ad978b67fb25da387971a45f04567fdb3e09f72b5da3024b0cc8ea19b8e"
+    },
+    {
+      "path": "CH20-EX3 Debug.launch",
+      "sha256": "51a161bcfe965faeafe4b620c6315d2e0ce161eeb3c1653bcc5dfa691765a538"
+    },
+    {
+      "path": "CH20-EX4 Debug.launch",
+      "sha256": "4abecfe7d7f64f9c6d03dc1689136b9f7d852d962f052205c240fd2e7b38c7b6"
+    },
+    {
+      "path": "CH20-EX5 Debug.launch",
+      "sha256": "f2c78be45ac808406c66bf27948c14014a7748d12a0b7a04634cbc0868b880d1"
+    },
+    {
+      "path": "ldscript.ld",
+      "sha256": "8d9f590bed577345b3e38ef4fa9a4a65d4fc7f3e85ce180fb1ace4826e7b9eb3"
+    },
+    {
+      "path": "ldscript2.ld",
+      "sha256": "1aadb625dea7f9f0cd3cbcff294c62ffebba66ec429ca138fbcb44f7c031086a"
+    },
+    {
+      "path": "ldscript3.ld",
+      "sha256": "e8d45ed4bced6ee30274015e2cf72b18c5e21f175c1895197785779c27f0c728"
+    },
+    {
+      "path": "ldscript4.ld",
+      "sha256": "043240ab1818ac14c5644f754ebb21ded549a4bb92ca2c888da7474de530509e"
+    },
+    {
+      "path": "ldscript5.ld",
+      "sha256": "9690168e945d8c381a2fcf0a45c88f0e0180a43d330b4860ceef179a8525683f"
+    },
+    {
+      "path": "main-ex1.c",
+      "sha256": "7dba411e448dbeca809dcacf10865d8c25d50da8c228d8ea7a25c77f443a13c9"
+    },
+    {
+      "path": "main-ex2.c",
+      "sha256": "04fa1f970faf25963c258df036f335779c98ad4804839e848401c3ad6f1feb08"
+    },
+    {
+      "path": "main-ex3.c",
+      "sha256": "1509e0f9b4fcab1bd25e40717661c7af6fbff1c8677bf0fd5090406c6550f8ec"
+    },
+    {
+      "path": "main-ex4.c",
+      "sha256": "2e25159e779141223011e0d2dc0bef972e8a6d1199a9d562af635ec5c5d85710"
+    },
+    {
+      "path": "main-ex5.c",
+      "sha256": "208f546a417eff0e4a10f96dfff45d8c154882aca524a354646c2338bd6e9123"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2021 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* 中文学习导读：本章比较外部中断的三种处理：EX1 直接检查/清除 EXTI 挂起位并翻转 LED；EX2 通过 HAL 回调区分 PC12/PC13；EX3 演示高优先级 PB2 中断终止低优先级 PC13 中断内的闪灯。需要 NUCLEO-F446RE、USB 连接线；EX2 另需 PC12 的 3.3V 上升沿输入，EX3 另需 PB2-GND 按钮。烧录后按对应边沿触发，预期分别出现翻转、置亮/置灭、开始/停止闪灯。当前仅完成静态核对与本地构建，未烧录，未通过硬件验收。 */
+/* Includes ------------------------------------------------------------------*/
+/* 学习注释：引入 "main.h"：板级引脚、HAL类型和本地错误处理声明。 */
+#include "main.h"
+
+/* 学习注释：建立 CPU 与总线时钟；先配置电源和振荡器，再切换 SYSCLK，失败进入 Error_Handler。 */
+void SystemClock_Config(void);
+/* 学习注释：设置闪灯控制标记；原版未用volatile，跨中断共享的优化风险保留。 */
+uint8_t blink=0;
+
+/* 学习注释：应用入口：先建立 HAL 时基、系统时钟和板级外设，再执行本例业务；不同 main 文件由 CMake 互斥选择。 */
+int main(void) {
+  /* 学习注释：GPIO配置结构清零，随后按引脚用途填写模式、上下拉和速度。 */
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* MCU Configuration----------------------------------------------------------*/
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  /* 学习注释：初始化 HAL、Flash 和毫秒时基，并进入 HAL_MspInit。 */
+  HAL_Init();
+  /* Configure the system clock */
+  /* 学习注释：建立 CPU 与总线时钟；先配置电源和振荡器，再切换 SYSCLK，失败进入 Error_Handler。 */
+  SystemClock_Config();
+
+  /* GPIOA, GPIOB and GPIOC Configuration----------------------------------------------*/
+  /* GPIO Ports Clock Enable */
+  /* 学习注释：开启/关闭对应外设总线时钟；外设寄存器配置依赖时钟已开启。 */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  /* 学习注释：开启/关闭对应外设总线时钟；外设寄存器配置依赖时钟已开启。 */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+  /* 学习注释：开启/关闭对应外设总线时钟；外设寄存器配置依赖时钟已开启。 */
+  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin : PC13 */
+  /* 学习注释：选择本次配置的引脚掩码；按位或表示同组同时配置。 */
+  GPIO_InitStruct.Pin = GPIO_PIN_13;
+  /* 学习注释：选择输入/推挽输出/复用或EXTI触发边沿；边沿决定哪个电平变化产生事件。 */
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+  /* 学习注释：设置内部上下拉，外接按键电路仍须与实际板卡匹配。 */
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  /* 学习注释：把 GPIO 引脚配置成输入、输出、复用或外部中断。 */
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PB2 */
+  /* 学习注释：选择本次配置的引脚掩码；按位或表示同组同时配置。 */
+  GPIO_InitStruct.Pin = GPIO_PIN_2;
+  /* 学习注释：选择输入/推挽输出/复用或EXTI触发边沿；边沿决定哪个电平变化产生事件。 */
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
+  /* 学习注释：设置内部上下拉，外接按键电路仍须与实际板卡匹配。 */
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  /* 学习注释：把 GPIO 引脚配置成输入、输出、复用或外部中断。 */
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+
+  /*Configure GPIO pin : PA5 */
+  /* 学习注释：选择本次配置的引脚掩码；按位或表示同组同时配置。 */
+  GPIO_InitStruct.Pin = GPIO_PIN_5;
+  /* 学习注释：选择输入/推挽输出/复用或EXTI触发边沿；边沿决定哪个电平变化产生事件。 */
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  /* 学习注释：设置内部上下拉，外接按键电路仍须与实际板卡匹配。 */
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  /* 学习注释：设置GPIO输出驱动转换速度，并非CPU时钟频率。 */
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  /* 学习注释：把 GPIO 引脚配置成输入、输出、复用或外部中断。 */
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /* Configure GPIO pin Output Level */
+  /* 学习注释：设置输出引脚电平，本章用于 LED 初值或常亮/熄灭。 */
+  HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+
+  /* EXTI interrupt init*/
+  /* 学习注释：设置中断抢占/子优先级。 */
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0x1, 0x0);
+  /* 学习注释：允许指定外设中断进入 CPU。 */
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
+  /* 学习注释：设置中断抢占/子优先级。 */
+  HAL_NVIC_SetPriority(EXTI2_IRQn, 0x0, 0x0);
+  /* 学习注释：允许指定外设中断进入 CPU。 */
+  HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+
+  /* 学习注释：持续执行主循环或停留等待中断；空循环不代表CPU休眠。 */
+  while (1);
+}
+
+/* 学习注释：EXTI 10～15 共用的中断入口；只处理本例配置的线路，避免把硬件触发误当作主循环调用。 */
+void EXTI15_10_IRQHandler(void) {
+	/* 学习注释：处理指定 EXTI 挂起位，并由 HAL 触发应用回调。 */
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+}
+
+/* 学习注释：PB2 的独立中断入口；EX3 中抢占 EXTI13，并由回调停止低优先级闪灯循环。 */
+void EXTI2_IRQHandler(void) {
+	/* 学习注释：处理指定 EXTI 挂起位，并由 HAL 触发应用回调。 */
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+}
+
+/* 学习注释：HAL 清除挂起位后进入的应用回调，依据 GPIO_Pin 区分事件来源。 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	/* 学习注释：区分PC13事件；在EX2点亮LED，在EX3进入低优先级闪灯。 */
+	if (GPIO_Pin == GPIO_PIN_13) {
+		/* 学习注释：设置闪灯控制标记；原版未用volatile，跨中断共享的优化风险保留。 */
+		blink = 1;
+		/* 学习注释：故意停留在低优先级回调内闪灯，等待高优先级PB2中断把blink清零；不建议照搬到产品。 */
+		while (blink) {
+			/* 学习注释：反转 PA5/LD2 当前输出状态。 */
+			HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+			/* 学习注释：用volatile计数强制保留忙等；它不是毫秒定时器，周期随CPU频率和优化而变。 */
+			for (volatile int i = 0; i < 100000; i++) {
+				/* Busy wait */
+			}
+		}
+	} else {
+		/* 学习注释：设置闪灯控制标记；原版未用volatile，跨中断共享的优化风险保留。 */
+		blink = 0;
+	}
+}
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+/* 学习注释：建立 CPU 与总线时钟；先配置电源和振荡器，再切换 SYSCLK，失败进入 Error_Handler。 */
+void SystemClock_Config(void)
+{
+  /* 学习注释：振荡器/PLL配置结构清零，避免未赋值字段带入栈上残值。 */
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  /* 学习注释：系统/总线时钟配置结构清零，随后填写来源与分频。 */
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage
+  */
+  /* 学习注释：开启/关闭对应外设总线时钟；外设寄存器配置依赖时钟已开启。 */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  /* 学习注释：按当前系统频率选择稳压器电压档位；这是HAL功能宏。 */
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  /* 学习注释：选择内部HSI振荡器作为本例时钟基础。 */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  /* 学习注释：使能HSI，供系统直接使用或供PLL参考。 */
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  /* 学习注释：采用芯片默认HSI校准值。 */
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  /* 学习注释：决定是否启用PLL；PLL_NONE表示不修改PLL并使用HSI。 */
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  /* 学习注释：应用振荡器与 PLL 配置。 */
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    /* 学习注释：初始化失败的终止路径；本教材版本关闭可屏蔽中断后停在空死循环，没有错误码输出或恢复动作。 */
+    Error_Handler();
+  }
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  /* 学习注释：选择本次更新SYSCLK、HCLK、PCLK1和PCLK2时钟域。 */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  /* 学习注释：选择本例CPU系统时钟来源：HSI直接输出或PLL主输出。 */
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  /* 学习注释：设置AHB相对SYSCLK的分频，本例DIV1表示HCLK等于SYSCLK。 */
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  /* 学习注释：设置APB1低速总线相对HCLK的分频，USART2波特率使用该总线时钟。 */
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  /* 学习注释：设置APB2高速总线相对HCLK的分频；与APB1独立。 */
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+  /* 学习注释：切换系统/总线时钟并设置 Flash 等待周期。 */
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  {
+    /* 学习注释：初始化失败的终止路径；本教材版本关闭可屏蔽中断后停在空死循环，没有错误码输出或恢复动作。 */
+    Error_Handler();
+  }
+}
+
+
+/* USER CODE BEGIN 4 */
+
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+/* 学习注释：初始化失败的终止路径；本教材版本关闭可屏蔽中断后停在空死循环，没有错误码输出或恢复动作。 */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  /* 学习注释：置PRIMASK禁止可屏蔽中断后停机；错误路径不再维持正常SysTick时基。 */
+  __disable_irq();
+  /* 学习注释：持续执行主循环或停留等待中断；空循环不代表CPU休眠。 */
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+/* 学习注释：按编译条件选择声明或模板；未启用分支不会进入固件。 */
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+/* 学习注释：仅 USE_FULL_ASSERT 启用时才进入的断言模板；当前函数体没有实际诊断动作。 */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+/* 学习注释：结束对应编译条件或头文件包含保护。 */
+#endif /* USE_FULL_ASSERT */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

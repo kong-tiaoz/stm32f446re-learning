@@ -1,0 +1,46 @@
+{
+  "Project": "book-uart-debugging-CH5",
+  "Date": "2026-10-31",
+  "Toolchain": "GNU Arm GCC 14.3.1 / CMake 4.3.1 / Ninja 1.13.2",
+  "OriginalFileCount": 80,
+  "ReferenceHashesUnchanged": true,
+  "AllOriginalFilesRetained": true,
+  "OnlyDeclaredOriginalFilesChanged": true,
+  "VendorHashesUnchanged": true,
+  "AnnotatedFileCount": 8,
+  "ChineseCommentCount": 489,
+  "ApplicationBusinessTokensUnchanged": true,
+  "APIExamplesCheckedAgainstActualSource": 40,
+  "Results": [
+    {
+      "Preset": "EX1-Debug",
+      "Main": "Core/Src/main-ex1.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:38:59.5530084Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX1-Debug/book-uart-debugging-CH5-EX1.elf",
+          "Bytes": 1202072,
+          "SHA256": "1e2daa18a62781b496c04cf9481dd195404cda6f25b31e4ee7970402c15a6448"
+        },
+        "HEX": {
+          "Path": "build/EX1-Debug/book-uart-debugging-CH5-EX1.hex",
+          "Bytes": 185340,
+          "SHA256": "ff61f3c1dcf84a773ae330f0515133bb5ff00377815dd024b38248fc363498ff"
+        },
+        "BIN": {
+          "Path": "build/EX1-Debug/book-uart-debugging-CH5-EX1.bin",
+          "Bytes": 65916,
+          "SHA256": "134936450175bd48c965b7168ae688652834fa71974e8f741ddeae5fc9ba67fa"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    }
+  ]
+}

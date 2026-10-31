@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-31",
+  "compiler": "Arm GNU Toolchain 14.3.1+st.2",
+  "cmake": "4.3.1+st.1",
+  "ninja": "1.13.2+st.1",
+  "results": [
+    {
+      "preset": "CH27-EX1",
+      "exitCode": 0,
+      "warnings": 3,
+      "log": "artifacts/build-CH27-EX1.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH27-EX2",
+      "exitCode": 0,
+      "warnings": 3,
+      "log": "artifacts/build-CH27-EX2.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    }
+  ],
+  "imageChecks": [
+    {
+      "preset": "CH27-EX1",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x0800934C",
+      "bytes": 37708,
+      "stack": "0x20020000",
+      "resetVector": "0x08000B71",
+      "elfSha256": "648392acdc6ade08166dcc97383621055614fc7cf7970e74ed3de63305e74cd0"
+    },
+    {
+      "preset": "CH27-EX2",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08007960",
+      "bytes": 31072,
+      "stack": "0x20020000",
+      "resetVector": "0x080009B1",
+      "elfSha256": "2aab081bebf2d8db8ccdb10e1d34d722724b2f53a4f39acf32cba5f69fa019b7"
+    }
+  ],
+  "sourceIntegrity": {
+    "chapter": "CH27",
+    "upstreamFiles": 130,
+    "byteIdentical": 103,
+    "commentOrWhitespaceOnly": [
+      "Core/Inc/main.h",
+      "Core/Inc/retarget.h",
+      "Core/Inc/stm32f4xx_hal_conf.h",
+      "Core/Inc/stm32f4xx_it.h",
+      "Core/Src/main_ex1.c",
+      "Core/Src/main_ex2.c",
+      "Core/Src/retarget.c",
+      "Core/Src/stm32f4xx_hal_msp.c",
+      "Core/Src/stm32f4xx_it.c",
+      "Core/Src/syscalls.c",
+      "Core/Src/sysmem.c",
+      "USB_DEVICE_EX1/App/usbd_cdc_if.c",
+      "USB_DEVICE_EX1/App/usbd_cdc_if.h",
+      "USB_DEVICE_EX1/App/usbd_desc.c",
+      "USB_DEVICE_EX1/App/usbd_desc.h",
+      "USB_DEVICE_EX1/App/usb_device.c",
+      "USB_DEVICE_EX1/App/usb_device.h",
+      "USB_DEVICE_EX1/Target/usbd_conf.c",
+      "USB_DEVICE_EX1/Target/usbd_conf.h",
+      "USB_DEVICE_EX2/App/usbd_custom_hid_if.c",
+      "USB_DEVICE_EX2/App/usbd_custom_hid_if.h",
+      "USB_DEVICE_EX2/App/usbd_desc.c",
+      "USB_DEVICE_EX2/App/usbd_desc.h",
+      "USB_DEVICE_EX2/App/usb_device.c",
+      "USB_DEVICE_EX2/App/usb_device.h",
+      "USB_DEVICE_EX2/Target/usbd_conf.c",
+      "USB_DEVICE_EX2/Target/usbd_conf.h"
+    ],
+    "explicitPortDifferences": [],
+    "unexpected": [],
+    "upstreamSha256Verified": true,
+    "hardwareConnected": false
+  },
+  "apiDocumentation": {
+    "cards": 89,
+    "sourceExamplesVerified": true,
+    "sixQuestionsPerCard": true,
+    "businessTokensPreservedExceptListedPorts": true
+  },
+  "hardwareConnected": false,
+  "flashed": false,
+  "hardwareObserved": false
+}

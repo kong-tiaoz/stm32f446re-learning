@@ -1,0 +1,57 @@
+[
+  {
+    "name": "ex1",
+    "main": "main-ex1.c",
+    "origin": "CH11-EX1"
+  },
+  {
+    "name": "ex2",
+    "main": "main-ex2.c",
+    "origin": "CH11-EX2"
+  },
+  {
+    "name": "ex3",
+    "main": "main-ex3.c",
+    "origin": "CH11-EX3"
+  },
+  {
+    "name": "ex4",
+    "main": "main-ex4.c",
+    "origin": "CH11-EX4"
+  },
+  {
+    "name": "ex5",
+    "main": "main-ex5.c",
+    "origin": "CH11-EX5"
+  },
+  {
+    "name": "ex6",
+    "main": "main-ex6.c",
+    "origin": "CH11-EX6"
+  },
+  {
+    "name": "ex7",
+    "main": "main-ex7.c",
+    "origin": "CH11-EX7"
+  },
+  {
+    "name": "ex8",
+    "main": "main-ex8.c",
+    "origin": "CH11-EX8"
+  },
+  {
+    "name": "ex9",
+    "main": "main-ex9.c",
+    "origin": "CH11-EX9"
+  },
+  {
+    "name": "ex10",
+    "main": "main-ex10.c",
+    "origin": "CH11-EX10"
+  },
+  {
+    "name": "ex11",
+    "main": "main-ex11.c",
+    "origin": "CH11-EX11"
+  }
+]

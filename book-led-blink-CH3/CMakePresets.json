@@ -1,0 +1,27 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "EX1-Debug",
+      "displayName": "hello-nucleo EX1 · Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/EX1-Debug",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "EX1"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "EX1-Debug",
+      "configurePreset": "EX1-Debug"
+    }
+  ]
+}

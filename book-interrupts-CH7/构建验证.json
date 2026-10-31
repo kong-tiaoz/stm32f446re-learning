@@ -1,0 +1,111 @@
+{
+  "Project": "book-interrupts-CH7",
+  "Date": "2026-10-31",
+  "Toolchain": "GNU Arm GCC 14.3.1 / CMake 4.3.1 / Ninja 1.13.2",
+  "OriginalFileCount": 80,
+  "ReferenceHashesUnchanged": true,
+  "AllOriginalFilesRetained": true,
+  "OnlyDeclaredOriginalFilesChanged": true,
+  "VendorHashesUnchanged": true,
+  "AnnotatedFileCount": 8,
+  "ChineseCommentCount": 483,
+  "ApplicationBusinessTokensUnchanged": true,
+  "APIExamplesCheckedAgainstActualSource": 29,
+  "Results": [
+    {
+      "Preset": "EX1-Debug",
+      "Main": "Core/Src/main-ex1.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:39:03.7159348Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [
+        "F:/project/NUCLEO-F446RE/book-interrupts-CH7/Core/Src/main-ex1.c:54:13: warning: 'MX_GPIO_Init' declared 'static' but never defined [-Wunused-function]"
+      ],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX1-Debug/book-interrupts-CH7-EX1.elf",
+          "Bytes": 1008744,
+          "SHA256": "c2203f1d317b8d17f71f6943df079802cc323bd2c78032b6a8ff845c659f111f"
+        },
+        "HEX": {
+          "Path": "build/EX1-Debug/book-interrupts-CH7-EX1.hex",
+          "Bytes": 14183,
+          "SHA256": "e3154ef9f96e9747ebcceb009b5f3316bc4b1c7422722146aef655951dae5ad2"
+        },
+        "BIN": {
+          "Path": "build/EX1-Debug/book-interrupts-CH7-EX1.bin",
+          "Bytes": 5012,
+          "SHA256": "73928d3dab016ee07d6880ea32018dce7635288f68f69fd905266f95fd12aafb"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    },
+    {
+      "Preset": "EX2-Debug",
+      "Main": "Core/Src/main-ex2.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:39:08.3198684Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [
+        "F:/project/NUCLEO-F446RE/book-interrupts-CH7/Core/Src/main-ex2.c:133:54: warning: implicit conversion from 'enum <anonymous>' to 'GPIO_PinState' [-Wenum-conversion]",
+        "F:/project/NUCLEO-F446RE/book-interrupts-CH7/Core/Src/main-ex2.c:137:54: warning: implicit conversion from 'enum <anonymous>' to 'GPIO_PinState' [-Wenum-conversion]"
+      ],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX2-Debug/book-interrupts-CH7-EX2.elf",
+          "Bytes": 1009028,
+          "SHA256": "43ce0a150e9281e56f136382b8f2ef22a35e3398d406f5598e72c2006a6ff5de"
+        },
+        "HEX": {
+          "Path": "build/EX2-Debug/book-interrupts-CH7-EX2.hex",
+          "Bytes": 14273,
+          "SHA256": "a3e945a327c94cce7c221d88b377881c89a4b272ebc3dc229e3a5b5f591756cb"
+        },
+        "BIN": {
+          "Path": "build/EX2-Debug/book-interrupts-CH7-EX2.bin",
+          "Bytes": 5044,
+          "SHA256": "1ba84c5ff7cc6bcc2cd3df1a0ca2c0bc23eef7df83f1963068b642687017d60e"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    },
+    {
+      "Preset": "EX3-Debug",
+      "Main": "Core/Src/main-ex3.c",
+      "BuildPassed": true,
+      "OnlyOneMainCompiled": true,
+      "BuiltUtc": "2026-10-31T14:39:12.9251474Z",
+      "InitialStack": "0x20020000",
+      "ResetAndSysTickInsideImage": true,
+      "Warnings": [],
+      "Images": {
+        "ELF": {
+          "Path": "build/EX3-Debug/book-interrupts-CH7-EX3.elf",
+          "Bytes": 1009508,
+          "SHA256": "549b1a540e555c95d308cfbb420c57fda1017e03748d717856508980079d49c1"
+        },
+        "HEX": {
+          "Path": "build/EX3-Debug/book-interrupts-CH7-EX3.hex",
+          "Bytes": 14670,
+          "SHA256": "7eb661f386c8dcad8f3196587f61272e3c747577016592b361617191cd2b3157"
+        },
+        "BIN": {
+          "Path": "build/EX3-Debug/book-interrupts-CH7-EX3.bin",
+          "Bytes": 5184,
+          "SHA256": "e8c6a516b536fb3ecd5a4da240843267180cc02e6c892e1a50ab55dc920030c7"
+        }
+      },
+      "HardwareConnected": false,
+      "Flashed": false,
+      "HardwareValidated": false
+    }
+  ]
+}

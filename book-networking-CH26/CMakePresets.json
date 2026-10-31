@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "CH26-EX1",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH26-EX1",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH26-EX1"
+      }
+    },
+    {
+      "name": "CH26-EX2",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/CH26-EX2",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "CH26-EX2"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "CH26-EX1",
+      "configurePreset": "CH26-EX1"
+    },
+    {
+      "name": "CH26-EX2",
+      "configurePreset": "CH26-EX2"
+    }
+  ]
+}

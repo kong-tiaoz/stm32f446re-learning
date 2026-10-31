@@ -31,6 +31,8 @@
 
 ## 全书与实验入口
 
+- [全部章节独立学习工程](../../docs/book-examples-index.md)：原参考目录保留，新副本提供各子示例的 VS Code 构建入口、功能/API 说明和应用中文注释；按模块选用，不等于全部硬件已验收。
+
 - [全书目录](contents.md)：来自当前 EPUB 的原始目录；带链接的两章已整理，其他章节随学习进度转换。
 - [第 3 章：Hello, Nucleo!（仅本地）](chapters/03-hello-nucleo.md)
 - [第 5 章：Introduction to Debugging（仅本地）](chapters/05-introduction-to-debugging.md)

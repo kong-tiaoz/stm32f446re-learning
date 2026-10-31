@@ -1,0 +1,47 @@
+{
+  "Project": "book-interrupts-CH7",
+  "ExternalUniqueCount": 19,
+  "HALFunctions": [
+    "HAL_GPIO_EXTI_IRQHandler",
+    "HAL_GPIO_Init",
+    "HAL_GPIO_TogglePin",
+    "HAL_GPIO_WritePin",
+    "HAL_IncTick",
+    "HAL_Init",
+    "HAL_NVIC_EnableIRQ",
+    "HAL_NVIC_SetPriority",
+    "HAL_RCC_ClockConfig",
+    "HAL_RCC_OscConfig"
+  ],
+  "HALMacros": [
+    "__HAL_GPIO_EXTI_CLEAR_IT",
+    "__HAL_GPIO_EXTI_GET_IT",
+    "__HAL_PWR_VOLTAGESCALING_CONFIG",
+    "__HAL_RCC_GPIOA_CLK_ENABLE",
+    "__HAL_RCC_GPIOB_CLK_ENABLE",
+    "__HAL_RCC_GPIOC_CLK_ENABLE",
+    "__HAL_RCC_PWR_CLK_ENABLE",
+    "__HAL_RCC_SYSCFG_CLK_ENABLE"
+  ],
+  "CMSIS": [
+    "__disable_irq"
+  ],
+  "CStandardLibrary": [],
+  "ProjectInterfaces": [
+    "main",
+    "EXTI15_10_IRQHandler",
+    "SystemClock_Config",
+    "Error_Handler",
+    "HAL_GPIO_EXTI_Callback",
+    "EXTI2_IRQHandler",
+    "HAL_MspInit",
+    "SysTick_Handler"
+  ],
+  "ScopeFiles": [
+    "Core/Src/main-ex1.c",
+    "Core/Src/main-ex2.c",
+    "Core/Src/main-ex3.c",
+    "Core/Src/stm32f4xx_hal_msp.c",
+    "Core/Src/stm32f4xx_it.c"
+  ]
+}

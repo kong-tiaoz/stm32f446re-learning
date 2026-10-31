@@ -1,0 +1,189 @@
+{
+  "date": "2026-10-31",
+  "compiler": "Arm GNU Toolchain 14.3.1+st.2",
+  "cmake": "4.3.1+st.1",
+  "ninja": "1.13.2+st.1",
+  "results": [
+    {
+      "preset": "CH23-EX1",
+      "exitCode": 0,
+      "warnings": 2,
+      "log": "artifacts/build-CH23-EX1.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH23-EX2",
+      "exitCode": 0,
+      "warnings": 2,
+      "log": "artifacts/build-CH23-EX2.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH23-EX3",
+      "exitCode": 0,
+      "warnings": 2,
+      "log": "artifacts/build-CH23-EX3.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH23-EX4",
+      "exitCode": 0,
+      "warnings": 2,
+      "log": "artifacts/build-CH23-EX4.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH23-EX5",
+      "exitCode": 0,
+      "warnings": 2,
+      "log": "artifacts/build-CH23-EX5.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH23-EX6",
+      "exitCode": 0,
+      "warnings": 2,
+      "log": "artifacts/build-CH23-EX6.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH23-EX7",
+      "exitCode": 0,
+      "warnings": 2,
+      "log": "artifacts/build-CH23-EX7.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    },
+    {
+      "preset": "CH23-EX8",
+      "exitCode": 0,
+      "warnings": 2,
+      "log": "artifacts/build-CH23-EX8.log",
+      "hardwareTested": false,
+      "logKind": "full or final incremental build; see record for retained warnings"
+    }
+  ],
+  "imageChecks": [
+    {
+      "preset": "CH23-EX1",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08005704",
+      "bytes": 22276,
+      "stack": "0x20020000",
+      "resetVector": "0x08000A6D",
+      "elfSha256": "f5cb102d4526a7cd2fe075505467b452931a857319237978850957a8f2a01f75"
+    },
+    {
+      "preset": "CH23-EX2",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08005984",
+      "bytes": 22916,
+      "stack": "0x20020000",
+      "resetVector": "0x08000AA9",
+      "elfSha256": "b2135505ef99472459046ffb4ac9cc5394631e673bc6364beec68e727f0d7e44"
+    },
+    {
+      "preset": "CH23-EX3",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08007D94",
+      "bytes": 32148,
+      "stack": "0x20020000",
+      "resetVector": "0x08000DAD",
+      "elfSha256": "75a2c4e0b02d464df82b1de417f3a3f40b1336cedc60283bf84a25e821e3b261"
+    },
+    {
+      "preset": "CH23-EX4",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08006E30",
+      "bytes": 28208,
+      "stack": "0x20020000",
+      "resetVector": "0x08000C8D",
+      "elfSha256": "25a476272c31d384f4b545083725e50fad502fbde72cc8a91917187e4cbbb2c8"
+    },
+    {
+      "preset": "CH23-EX5",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08006AA4",
+      "bytes": 27300,
+      "stack": "0x20020000",
+      "resetVector": "0x08000CF5",
+      "elfSha256": "6316c93102cd761db426f12bd58ebca26b03dabc780d27dd413b8f8b823d9eaf"
+    },
+    {
+      "preset": "CH23-EX6",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x0800578C",
+      "bytes": 22412,
+      "stack": "0x20020000",
+      "resetVector": "0x08000A6D",
+      "elfSha256": "fa0015a04f3279a5d5e60e015fe0981b6e88ff9cf1702b6d611b743c04958a37"
+    },
+    {
+      "preset": "CH23-EX7",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x08007E0C",
+      "bytes": 32268,
+      "stack": "0x20020000",
+      "resetVector": "0x080013F5",
+      "elfSha256": "b3a418541f87a7e974ddef13a36602177229e1c90d35175bbff662bf5b62cc3a"
+    },
+    {
+      "preset": "CH23-EX8",
+      "flashStart": "0x08000000",
+      "flashEndExclusive": "0x080074A4",
+      "bytes": 29860,
+      "stack": "0x20020000",
+      "resetVector": "0x08000FBD",
+      "elfSha256": "1b0a4e5040724fac707617bb86b4f85a7a5a421b09870cfc4d5f4cff4f778089"
+    }
+  ],
+  "sourceIntegrity": {
+    "chapter": "CH23",
+    "upstreamFiles": 138,
+    "byteIdentical": 115,
+    "commentOrWhitespaceOnly": [
+      "Core/Inc/FreeRTOSConfig.h",
+      "Core/Inc/main.h",
+      "Core/Inc/nucleo_hal_bsp.h",
+      "Core/Inc/retarget.h",
+      "Core/Inc/stm32f4xx_hal_conf.h",
+      "Core/Inc/stm32f4xx_it.h",
+      "Core/Src/freertos.c",
+      "Core/Src/main-ex1.c",
+      "Core/Src/main-ex2.c",
+      "Core/Src/main-ex3.c",
+      "Core/Src/main-ex4.c",
+      "Core/Src/main-ex5.c",
+      "Core/Src/main-ex6.c",
+      "Core/Src/main-ex7.c",
+      "Core/Src/main-ex8.c",
+      "Core/Src/nucleo_hal_bsp.c",
+      "Core/Src/retarget.c",
+      "Core/Src/stm32f4xx_hal_msp.c",
+      "Core/Src/stm32f4xx_hal_timebase_tim.c",
+      "Core/Src/stm32f4xx_it.c",
+      "Core/Src/syscalls.c",
+      "Core/Src/sysmem.c",
+      "Core/Src/tickless-mode.c"
+    ],
+    "explicitPortDifferences": [],
+    "unexpected": [],
+    "upstreamSha256Verified": true,
+    "hardwareConnected": false
+  },
+  "apiDocumentation": {
+    "cards": 86,
+    "sourceExamplesVerified": true,
+    "sixQuestionsPerCard": true,
+    "businessTokensPreservedExceptListedPorts": true
+  },
+  "hardwareConnected": false,
+  "flashed": false,
+  "hardwareObserved": false
+}

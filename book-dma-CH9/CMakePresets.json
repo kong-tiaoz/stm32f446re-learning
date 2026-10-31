@@ -1,0 +1,42 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "EX1-Debug",
+      "displayName": "CH9 EX1 · Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/EX1-Debug",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "EX1"
+      }
+    },
+    {
+      "name": "EX2-Debug",
+      "displayName": "CH9 EX2 · Debug",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/EX2-Debug",
+      "toolchainFile": "${sourceDir}/cmake/arm-none-eabi-gcc.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "BOOK_EXAMPLE": "EX2"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "EX1-Debug",
+      "configurePreset": "EX1-Debug"
+    },
+    {
+      "name": "EX2-Debug",
+      "configurePreset": "EX2-Debug"
+    }
+  ]
+}

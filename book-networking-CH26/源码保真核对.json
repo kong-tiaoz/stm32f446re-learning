@@ -1,0 +1,38 @@
+{
+  "chapter": "CH26",
+  "upstreamFiles": 193,
+  "byteIdentical": 167,
+  "commentOrWhitespaceOnly": [
+    "Core/Inc/config.h",
+    "Core/Inc/FreeRTOSConfig.h",
+    "Core/Inc/main.h",
+    "Core/Inc/nucleo_hal_bsp.h",
+    "Core/Inc/retarget-tcp.h",
+    "Core/Inc/retarget.h",
+    "Core/Inc/stm32f4xx_hal_conf.h",
+    "Core/Inc/stm32f4xx_it.h",
+    "Core/Src/config.c",
+    "Core/Src/freertos.c",
+    "Core/Src/main-ex1.c",
+    "Core/Src/main-ex2.c",
+    "Core/Src/main.c",
+    "Core/Src/retarget-tcp.c",
+    "Core/Src/retarget.c",
+    "Core/Src/stm32f4xx_hal_msp.c",
+    "Core/Src/stm32f4xx_it.c",
+    "Core/Src/syscalls.c",
+    "Core/Src/sysmem.c",
+    "FATFS/App/fatfs.c",
+    "FATFS/App/fatfs.h",
+    "FATFS/Target/ffconf.h",
+    "FATFS/Target/sd_diskio_spi.c",
+    "FATFS/Target/sd_diskio_spi.h"
+  ],
+  "explicitPortDifferences": [
+    "Core/Src/nucleo_hal_bsp.c",
+    "Core/Src/stm32f4xx_hal_timebase_tim.c"
+  ],
+  "unexpected": [],
+  "upstreamSha256Verified": true,
+  "hardwareConnected": false
+}

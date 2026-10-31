@@ -1,0 +1,16 @@
+{
+  "chapter": "CH20",
+  "upstreamFiles": 18,
+  "byteIdentical": 13,
+  "commentOrWhitespaceOnly": [
+    "main-ex1.c",
+    "main-ex2.c",
+    "main-ex3.c",
+    "main-ex4.c",
+    "main-ex5.c"
+  ],
+  "explicitPortDifferences": [],
+  "unexpected": [],
+  "upstreamSha256Verified": true,
+  "hardwareConnected": false
+}

@@ -1,0 +1,527 @@
+{
+  "upstream": "cnoviello/mastering-stm32-2nd",
+  "commit": "2183a2c5fe25fd9229abd21dab4f23658036dd3f",
+  "source": "references/stm32f446re-learning/Nucleo-F446RE/CH27",
+  "files": [
+    {
+      "path": ".cproject",
+      "sha256": "180576d4210ff253c0ae623ef814a37e67ad08a13fac06ab719ac452ffb28865"
+    },
+    {
+      "path": ".mxproject",
+      "sha256": "cb75a0fcad5625779821cfff6bc369fec040d2f6c87c4d29df5c27ce3774195b"
+    },
+    {
+      "path": ".project",
+      "sha256": "39b5c7df0a3c0a095f52767fea71fd026a3b80ac1c9422850e8f8e4ee1b1b7ef"
+    },
+    {
+      "path": ".settings/language.settings.xml",
+      "sha256": "633a4f6ee5e9eb54d01ba1214d32471f5d534db620f76c0b008b00c844edc91a"
+    },
+    {
+      "path": ".settings/stm32cubeide.project.prefs",
+      "sha256": "890a5b7dd47762db30f82dd5e02682fef2901da8d9673a14fdb3bc608f2895b0"
+    },
+    {
+      "path": "CH27-EX1 Debug.launch",
+      "sha256": "d061951c8e8d0633a2f2b53955e6c6ac3add05aa127b6ac0e9692dcf5a2c0d4d"
+    },
+    {
+      "path": "CH27-EX2 Debug.launch",
+      "sha256": "c3e3f36fc5b7fea9dc5007a73fbd820ed0f5719357839a4f1755c3874e2304c5"
+    },
+    {
+      "path": "CH27.ioc",
+      "sha256": "3f851908ccc04b58f26a4d9cb8a293d8f947367bd26655da0bc9710433982bed"
+    },
+    {
+      "path": "Core/Inc/main.h",
+      "sha256": "222fa06c42609022c81fed8acf905253ffd246a2529d24e6306de1ac892375f7"
+    },
+    {
+      "path": "Core/Inc/retarget.h",
+      "sha256": "a844b6db1a06eed2f4e41503bcd45010ca55faa73bf7d4419e7a9f06ab813d95"
+    },
+    {
+      "path": "Core/Inc/stm32f4xx_hal_conf.h",
+      "sha256": "05cf7d73763ba41631eceeb9d32fc1b1dac6395816c7dc6dec968450506dc64c"
+    },
+    {
+      "path": "Core/Inc/stm32f4xx_it.h",
+      "sha256": "7776b20caf7883fe2df4d4acff108ce3e50838bcd1d9272da77743f397b9e573"
+    },
+    {
+      "path": "Core/Src/main_ex1.c",
+      "sha256": "72450c7331e9157c9de76e658a1ea088cff584c92320df168a0006fee5326649"
+    },
+    {
+      "path": "Core/Src/main_ex2.c",
+      "sha256": "e1cbf44a8ae90ccf3a18fde0074bad003bb3cad55a2f8a5e89156c6ecbe51e7a"
+    },
+    {
+      "path": "Core/Src/retarget.c",
+      "sha256": "b888c6a90a478a8aba814c7164d1961db138d99fcdf664f417e633de13dc1fd2"
+    },
+    {
+      "path": "Core/Src/stm32f4xx_hal_msp.c",
+      "sha256": "0497d2261cbc6782741079e03ee532ec9be59cad826dbd06fb12f362a01a9fa2"
+    },
+    {
+      "path": "Core/Src/stm32f4xx_it.c",
+      "sha256": "a6f46d2e64b1e6e980d88b8fd5d3b68522dc57f6489c46685cd596c6ec4b8832"
+    },
+    {
+      "path": "Core/Src/syscalls.c",
+      "sha256": "d6de4eb612cd82de12e3dfc98028686d57f85b192e270739cefcf2b28b616221"
+    },
+    {
+      "path": "Core/Src/sysmem.c",
+      "sha256": "63d26181ab23e0e6291cd8f6422f10c0b98040d655cf5e52ef92ea7924214c76"
+    },
+    {
+      "path": "Core/Src/system_stm32f4xx.c",
+      "sha256": "640eaf0079fd56d612db41cc1f11186ec2103a5ef8f8de1d0f483bfc28a0a0d1"
+    },
+    {
+      "path": "Core/Startup/startup_stm32f446retx.s",
+      "sha256": "11f587ec16bce49d17577501a500d3024c86b487628fd656db4fb8b3e11a8905"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h",
+      "sha256": "9935cfdd97557fa9b7c0ed70f6b4b9b4cc9e23575ae4d48f7e848e55be06d803"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h",
+      "sha256": "4c24880773b30e32923a575a7b3dfe6772896132e9e3343ee1e007d0b4b217a2"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h",
+      "sha256": "bdefc39e17d9fb7213b3b10721dcbfbe01708800c01ab85852eea02389e434f2"
+    },
+    {
+      "path": "Drivers/CMSIS/Device/ST/STM32F4xx/License.md",
+      "sha256": "f2e4f78dabd3d2d81f9a04ec5b88b00d590f8faf5270ef9658f7be2929c637e7"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_armcc.h",
+      "sha256": "57b8d88cd03152f60bf74de0149ec979ae20210d86ab06e837aa69c66f27d615"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_armclang.h",
+      "sha256": "da29dbad3cf27f6c86437af6bd0b302e105210742ad7a602bea51b104f1661c9"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_compiler.h",
+      "sha256": "cd3cbd1c771a5252827a14c75a12e7ed975f76b9fc1577d53a74ba0e7c1af6c3"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_gcc.h",
+      "sha256": "8c16d51f7884a9fc07c5cbe6f2bcd24e5e092ddc519f71d36740c2d2e2ff6a27"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_iccarm.h",
+      "sha256": "a600765888c69ee60cd2d01d77356902d4ae5fa98aa7e1d73703663c96b7f87a"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/cmsis_version.h",
+      "sha256": "280b9fc8739aefa878d47e68d7adbd4908a15f98ec193cdba1a4b514133f5c34"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_armv8mbl.h",
+      "sha256": "220d90f3f99126e656c31c32f099ff766b32cf487f7dd77388e4c9a78e1898c8"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_armv8mml.h",
+      "sha256": "825a8799d71f3fa29690b1597dfc2dfb660b103d44e20b8185f26b4f3b4ffdf0"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm0.h",
+      "sha256": "1beaa04c859225f75142d055e9c5dacfc9ac1d88c82934177f745b9c5f3f4094"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm0plus.h",
+      "sha256": "c953256e1c1b1cd6accbbfca5d47c09a9b0534f3147b125e17e59c0ae6c30ed7"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm1.h",
+      "sha256": "460281028a261740cd5ec86840bed01c480d70ba5b54a0f9938d4cefadfd486b"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm23.h",
+      "sha256": "6303efec943ca0f9eccdab8fc39200d6f95dc943d4051198e0d49f24395028a5"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm3.h",
+      "sha256": "368296087a925cf78133d27e0854d748605441915e0f4fece93f2f97eea68adb"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm33.h",
+      "sha256": "7f1b6a76b119e1e1680f756da897929f63d98133442c5115678af60adf20f1a8"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm4.h",
+      "sha256": "738dff259c25e68ed2529baf425315d8dae1af5dac6c11b66bfdef82e78e86c9"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_cm7.h",
+      "sha256": "6b75e3bef1eb81e0d3e2c311ad26fcdbac4cde2cd3462a62b81a23f6aec0e55f"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_sc000.h",
+      "sha256": "d1528d13fbf91da620ef977e99802d83ded093c0521c04cad128da23e3001524"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/core_sc300.h",
+      "sha256": "fa514ea0cf5327b0523c2bdfebfb76fd2e69f972e5f60fbfb94ade56b31c722b"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/mpu_armv7.h",
+      "sha256": "b0b6da4ec744b5f547a94e60e24b0a6ff6bb7307d3f81a83d0b7c3a64dc29326"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/mpu_armv8.h",
+      "sha256": "8280a1d4d3d25f60cdc05b84718cf504f02b7265fc3b7c5790cb29cd7dcf116c"
+    },
+    {
+      "path": "Drivers/CMSIS/Include/tz_context.h",
+      "sha256": "7fcc21fc190f6fd970390e9caaa6a86d72fd10f9edf4efab36f12aecf1a8baa0"
+    },
+    {
+      "path": "Drivers/CMSIS/LICENSE.txt",
+      "sha256": "e03ba41d7fab20700769fe4118bab50d800cb74f990353a05d2f5fff1c228363"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h",
+      "sha256": "2bd15eb13468e87caf020ac2a3e21d9eef0e80097508fcafad13b81014970916"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h",
+      "sha256": "55db473fa84ffbfbe3a23da15e06ec7a57f3d33c667669f4a70825718cb49585"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h",
+      "sha256": "f2d8d6c2f27b0203c35e986275f612feba01bd4f835560fc5df839102369b585"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h",
+      "sha256": "b8bdf043c5cde13ee4bea5d218d5d6f4a90e8b853540518487d97225bd8ec1f4"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h",
+      "sha256": "d0eba1c5c2a7d5ea84fa6db2d62fecf41267101aadf25befe12c878a2c75c870"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h",
+      "sha256": "d9ecfe8c640aaea3423fe7ae54257d7d16ca9f7205b8d8fd659b6485a6acdd9c"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h",
+      "sha256": "ed211f05fdb42ce4c647ad588c03c64764263594ec079908112437cdf6af80cd"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h",
+      "sha256": "cc1cc94a98945e793e7e73ead38e73138c3816b6a8bb475edb09d4adb9b80b39"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h",
+      "sha256": "ee895a3151173aa118a8d5893f2c5c6ff4b51cf8531aedad0a72a65696cfcdd8"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h",
+      "sha256": "49ace9937ba7d18c10c7806f94a12b19cf5cc7e2434424235e36a387a0c60ed3"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h",
+      "sha256": "b008dea9d48f83e11b90d806d8a8565394d59b093f8769ede0dadd1012272be8"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h",
+      "sha256": "d4991e679c01ce5bcd1cedadad0e25d0541e4997a5c10a7dd717cbe15b81c198"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h",
+      "sha256": "4cdb17d14b36f3276980900c8003104dfb1467c1283bbe4684107f0a56a2dee9"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h",
+      "sha256": "860dc2ba09c2666b871a4d8d290d0d2cf86529b606e64fd9aea16cbd1d4acdb9"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h",
+      "sha256": "debcaccd8d16b68516d992b8f73d0135c497ae727a2d728c3d3fa5c6452b4c0b"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h",
+      "sha256": "623238bef2c2a4505bfb8927b1eb861836e183996b8816a234146d5bf6b86560"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h",
+      "sha256": "dbca0e7c98403d5b1be330db65d043c71d0d3035658337d66fd6619d8b8b3305"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h",
+      "sha256": "5606b1bc814da0e27e231393ea507b476f76f6826ea8e989048aaaf3f6845ee1"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h",
+      "sha256": "460e651d7486ce7f2539494ffa57613b201d906ba4bc9583a57f7c0119707f8c"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h",
+      "sha256": "9bdfa73a5a7d2b870100872d691122a8d092ce7464b03997b5183b944d6e9c6c"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h",
+      "sha256": "db9af6e7b4469e4292e7a0c602747b23d5159c3a5a06739d5d31fe51246f3675"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h",
+      "sha256": "79cffc7b2f35624cb16597cc03aaff1d743b43468bbf03dcb3c22db8dc906dd5"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h",
+      "sha256": "1970dc6dd9a061c858f74a5b35682153f0d11831eb6c359b80c5a558f2aeca6e"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h",
+      "sha256": "07395a44b63813868c336d74b6c602dadaea44355ad99cf141fd9ef5737644fa"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/License.md",
+      "sha256": "d38dcd26a2428a984002f1d62248d0fc5c0e1123c78a2f692758d95f872258ec"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c",
+      "sha256": "666bfdc37edd048970795c34d180e98f9c512bbfe000b3782b3d2411da39f35e"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c",
+      "sha256": "284f4f276ba6a5b3938b4e04371fad1bb8a193ba1a48a5f2227b7ebcccbee65e"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c",
+      "sha256": "223042904b58b7bfd8a8f0c2155eafb0086e8b2d2316a664d28473f899de4410"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c",
+      "sha256": "3c2bb1f2b2fa129c5a414f5c5b1e4190655c2076ea6edc8307c69f3224961940"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c",
+      "sha256": "0b6a0d0249bece7d6bc1d427d5b54220fc52395c751a320f929e9669fb9e412f"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c",
+      "sha256": "053e6d5a07d79d693f2e6e6dadcce094d4df7db958f7c51545295fa41589b47c"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c",
+      "sha256": "337901dce6af2bb5975688a000fb7d323f54f1003f3a4b18985841d69381be9b"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c",
+      "sha256": "d4016e6f06a859a85fb85b508c3a40051f50c0d7b95a66f5b18e6bdbda71f3d5"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c",
+      "sha256": "e55202340d6cb0b9a901092b9ad074f1128109baaf0abc645262aa2ea2cb5829"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c",
+      "sha256": "4133261fd04c8f176dc631eaf35859ed1cc2fd4ead5681f6dc4a7022b1fbf73c"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
+      "sha256": "2a46f2b5fdb06bc2b65a679aeb92b9678cc0c16f0a5b63c090ad1a04b61d8035"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c",
+      "sha256": "3907db2864a2cbb81a82dcbb29890b2353fa8b0d55d13226e1873eb4fde2f4f5"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c",
+      "sha256": "f1661920beef54dd06ff1b17f59cce65a86544e56b5f986262ea2bc357d4259b"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c",
+      "sha256": "dbb6ef79bfc224b46fa7e7e216306801f557e2b0097e3dccd3367fb0dba13521"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c",
+      "sha256": "162086981ff41b78e08bfb4c526500e07bf5edac59deaad3e367f2acfbc81434"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c",
+      "sha256": "f377d59519c6e1dbce51f4a385d1b8afa3d7cca686288e6acf09560877426db6"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c",
+      "sha256": "1b0c7ab6f27418b42b29715a65d27c66a0ee1029d80e0985cd4ef4fbe0e402c1"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c",
+      "sha256": "7d775698e34e75569c8531a2575df5576b5a32483c0a35c8303337b3dcf0ab09"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c",
+      "sha256": "f5d55dd3e885ed569a429cb9a0856521ee78f3eb9896a36a6c5a8d384849fbfb"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c",
+      "sha256": "4828dd2f906e3312e707816047cc238937b651840b7db66789c5c3d50cac6ecf"
+    },
+    {
+      "path": "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c",
+      "sha256": "221b15b8c8c93518956d9db4ff8b995b3534075bae5a701a797e5a6c5e0d6178"
+    },
+    {
+      "path": "hid_test.py",
+      "sha256": "3d9ad3e540f253dd595599cedfce2899c3da0edc6b72b2285c37807518d9b20f"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h",
+      "sha256": "43a451cf4b323fcb553102bb0c1e276442bc16ce5daa208f06da42f7ea0a9239"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c",
+      "sha256": "84a6cde727cc68cfbe4cdc237e7a9d72d608c3ab4c0eb9ef48120f2d22cf33ae"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h",
+      "sha256": "0e9cbd803776a4186dfe43d82f0883abeaf33a621c1d9cc919b6b4f619786a2d"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h",
+      "sha256": "4d901909929578c83618a8cc16fef66e87c6da46e97f9f9b45d75223e48b38e4"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h",
+      "sha256": "67156823d1afc4af7b399494fcd50d463ed06b5bfed2fa937829bb1ba24f4c72"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h",
+      "sha256": "86af5ba1fffe19954b7434b636e39847ccafbee2e78dca37f59a7234f46a4225"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c",
+      "sha256": "913a6194ad6f04a0d1ed7d9d19c22130054f3291b5f888d8cc776b61cb5be25b"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c",
+      "sha256": "b8a647df8fbf1f6fe49b278990c84f97d768f7d044a5e65f007ddc7c3cc272bc"
+    },
+    {
+      "path": "Middlewares_EX1/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c",
+      "sha256": "189870e743efcf7fb0a5f96fafb7f934a8f3295a7d15bd9cb5eb45c825259f18"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h",
+      "sha256": "ed21501331d12e056bca74836ea4e77faf9bf1e9916f6b1cc8a052874affffb1"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c",
+      "sha256": "3f65db48e878feda0153482145a1e513213115b5525cd7633781764e08a45035"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h",
+      "sha256": "cb2f81f37059c069488c0cf46e8be3f906cb88bd9c01480f444fb98a20d5b0ff"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h",
+      "sha256": "779b996b74b30585ba9ff69ac95e8883429047549858ff60e8e229092f97e954"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h",
+      "sha256": "d3619b4b6e6116326778b6fe2bbcef850b7b54ced59b611a7079e6e1acfcfd46"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h",
+      "sha256": "a68dffda51f05ddd29a57f04b73f173a68d1370f476ea854d73a2893d808ec79"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c",
+      "sha256": "a77e32a94480c7124d04d51d4b919e0c914b9afbd1fa7ed6d159c6b36cc3a839"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c",
+      "sha256": "fcdc3ddf2151bfc0d240ea578211ac54eab6d7fdd2fddf8dbe51d4db474ab864"
+    },
+    {
+      "path": "Middlewares_EX2/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c",
+      "sha256": "f6c96cc00e5820fc240a080e14136288fcdcede63b2c9042d9f6f54bb1b039d9"
+    },
+    {
+      "path": "STM32F446RETX_FLASH.ld",
+      "sha256": "9979ea18de91d87dc7863017a9bcd2e5891790a879df0635884a551896eda1d5"
+    },
+    {
+      "path": "STM32F446RETX_RAM.ld",
+      "sha256": "d23fb0fc32d53c3d658827a8c054013f4e0406b473a5834af9cb37ded41f9164"
+    },
+    {
+      "path": "USB_DEVICE_EX1/App/usbd_cdc_if.c",
+      "sha256": "72a7ff8444abac11e242cd35b7898bb122ee0ec018379223cad29a58637de346"
+    },
+    {
+      "path": "USB_DEVICE_EX1/App/usbd_cdc_if.h",
+      "sha256": "50c75a4e3f05b5a387ab930788e2f90551f758d67372754769c0fee8e8ec8ae9"
+    },
+    {
+      "path": "USB_DEVICE_EX1/App/usbd_desc.c",
+      "sha256": "24349d8bb3f9fc3cfe100f8e9ac0d38adf46715bd7d2ca506593f3689ba9790b"
+    },
+    {
+      "path": "USB_DEVICE_EX1/App/usbd_desc.h",
+      "sha256": "819ac454c0f69b30a8007517f1514769adac286b1068918ec0e28bf7f3a0035a"
+    },
+    {
+      "path": "USB_DEVICE_EX1/App/usb_device.c",
+      "sha256": "2bbf8867a2068df288c7ad949c9aea34934c6d35e9f042636e882a8cc5fa15c5"
+    },
+    {
+      "path": "USB_DEVICE_EX1/App/usb_device.h",
+      "sha256": "5a78da90b679e4655c74e681a9608d01cc83c8ee4c89437ba6b41a5d8d0e25d2"
+    },
+    {
+      "path": "USB_DEVICE_EX1/Target/usbd_conf.c",
+      "sha256": "32b7fde5821f2cff43536c23bbeb4eb70cbe1077d5e52a635e232359b96bb0e2"
+    },
+    {
+      "path": "USB_DEVICE_EX1/Target/usbd_conf.h",
+      "sha256": "a7d57e906f69fd587f38e2bfd227770189fe0a732c58bf5a72c2d364927119d0"
+    },
+    {
+      "path": "USB_DEVICE_EX2/App/usbd_custom_hid_if.c",
+      "sha256": "ac2d161608ebd35b6da7a552da255a2b7cb97c84c1664d4574cfa320c7e52bb7"
+    },
+    {
+      "path": "USB_DEVICE_EX2/App/usbd_custom_hid_if.h",
+      "sha256": "f38c04b1501aee68a14ed268450b9b3685ffdffc48320fdbcb59a9a20b8f6224"
+    },
+    {
+      "path": "USB_DEVICE_EX2/App/usbd_desc.c",
+      "sha256": "65d38abcf6d823ebbffdd349a1d1c3b216a924df5ed8057f4ec46ee9565a6a3c"
+    },
+    {
+      "path": "USB_DEVICE_EX2/App/usbd_desc.h",
+      "sha256": "ac8b1617ff52d289b70a96bb48a6b4622bf4c01b963a65720d6bbd15d4fbdd14"
+    },
+    {
+      "path": "USB_DEVICE_EX2/App/usb_device.c",
+      "sha256": "e7578c8444559896ed9143c23ce03903fdb05a0ce7cd98ba76416f9c2bc1fbb3"
+    },
+    {
+      "path": "USB_DEVICE_EX2/App/usb_device.h",
+      "sha256": "ecd7cb255e7b7b04a81ab342781164abb2c6cb599017d0ae6449e5b9a4eacd12"
+    },
+    {
+      "path": "USB_DEVICE_EX2/Target/usbd_conf.c",
+      "sha256": "a36ba312c648c0c6f839a31a61cbe6f3efcdd0f654ae3cbec3b23bd07ef7cd41"
+    },
+    {
+      "path": "USB_DEVICE_EX2/Target/usbd_conf.h",
+      "sha256": "9afce7241b12f7c05e3d5c2d21f7880697e8ae6e444cf96347399cd57b2284d4"
+    }
+  ]
+}

@@ -6,6 +6,7 @@ GitHub：[kong-tiaoz/stm32f446re-learning](https://github.com/kong-tiaoz/stm32f4
 
 | 入口 | 内容 |
 | --- | --- |
+| [全部教材示例](docs/book-examples-index.md) | 15 个独立章节学习工程、子例选择、API 说明及注释 |
 | [学习进度](learning/mastering-stm32/notes/progress.md) | 当前章节、已验证结果、待完成任务 |
 | [功能模块学习计划](learning/mastering-stm32/function-modules.md) | 围绕数据采集仪按功能验收推进；下一模块为串口交互与基础调试 |
 | [第一课](learning/mastering-stm32/notes/01-first-session.md) | 英语、代码对照和动手练习 |
