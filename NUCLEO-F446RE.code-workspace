@@ -1,10 +1,6 @@
 {
   "folders": [
     {
-      "name": "NUCLEO-F446RE",
-      "path": "."
-    },
-    {
       "name": "Mastering STM32 学习",
       "path": "learning/mastering-stm32"
     },
@@ -25,7 +21,12 @@
       "path": "references/stm32f446re-learning"
     },
     {
+      "name": "ST-official",
       "path": "references/ST-official"
+    },
+    {
+      "name": "NUCLEO-F446RE",
+      "path": "."
     }
   ],
   "settings": {
