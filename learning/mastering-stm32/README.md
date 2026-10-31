@@ -71,3 +71,7 @@
 转换使用现有 Pandoc，可用 `-PandocPath` 指定可执行文件；不会覆盖 `notes/`。VS Code 的学习任务已提供检查入口。重新转换会重建这两章和目录，不会自动转换未学章节。
 
 来源：[作者示例仓库](https://github.com/cnoviello/mastering-stm32-2nd)、[Pandoc 使用说明](https://pandoc.org/MANUAL.html)、[Codex IDE 官方说明](https://learn.chatgpt.com/docs/codex/ide)。
+
+## API 说明维护约定
+
+每个自行维护的实验工程根目录固定建立 **本代码所用API说明.md**，由工程 README 提供入口。每个接口按六问卡记录：**谁提供、做什么、输入什么、返回什么、调用前准备什么、调用后验证什么**。按名称去重，区分函数、宏和内核接口，标明正常路径、错误路径及未调用模板；项目封装和回调另列，不递归统计厂商库内部调用。新增、删除 API 或改变参数含义时同步更新说明。后续默认 **CubeMX + HAL**，寄存器工程仅保留为历史基线。模板与规则见 [API 说明模板](../../docs/API说明模板.md)。

@@ -91,3 +91,9 @@ powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File .\scripts\setup-de
 - 版权与第三方许可证见 [NOTICE.md](NOTICE.md)。本项目未把作者、ST 和 Arm 的全部代码重新声明为 MIT。
 
 本次已用 GNU Arm GCC 14.3.1、CMake 4.3.1、Ninja 1.13.2 分别编译 Debug/Release，构建无警告；Debug BIN 为 **65916 字节**，Release BIN 为 **65076 字节**。Reset/SysTick 向量、栈顶和 ELF 段权限检查均通过，GDB 能在 Debug ELF 中定位 `main-ex1.c` 的源代码行。构建日志、ELF 检查日志位于 `artifacts/logs/`，产物 SHA256 在 `artifacts/build-verification.json`。本次构建验证不连接硬件；串口和断点效果以开发板验收为准。
+
+## API 说明维护约定
+
+每个自行维护的实验工程根目录固定建立 **本代码所用API说明.md**，由工程 README 提供入口。每个接口按六问卡记录：**谁提供、做什么、输入什么、返回什么、调用前准备什么、调用后验证什么**。按名称去重，区分函数、宏和内核接口，标明正常路径、错误路径及未调用模板；项目封装和回调另列，不递归统计厂商库内部调用。新增、删除 API 或改变参数含义时同步更新说明。后续默认 **CubeMX + HAL**，寄存器工程仅保留为历史基线。模板与规则见 [API 说明模板](../docs/API说明模板.md)。
+
+本工程：[本代码所用API说明.md](本代码所用API说明.md)。

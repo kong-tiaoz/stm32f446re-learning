@@ -89,3 +89,9 @@ ELF 保留调试符号。全局变量 `g_status` 中的 `magic` 为 `0xF446B11A`
 - [ST Nucleo-64 用户手册 UM1724](https://www.st.com/resource/en/user_manual/um1724-.pdf)
 - [ST STM32F446 器件寄存器定义](https://github.com/STMicroelectronics/cmsis-device-f4/blob/master/Include/stm32f446xx.h)
 - [STM32CubeProgrammer 命令行文档](https://dev.st.com/stm32cube-docs/prog/2.23.0/en/docs/markup/CubeProg_Command_Lines.html)
+
+## API 说明维护约定
+
+每个自行维护的实验工程根目录固定建立 **本代码所用API说明.md**，由工程 README 提供入口。每个接口按六问卡记录：**谁提供、做什么、输入什么、返回什么、调用前准备什么、调用后验证什么**。按名称去重，区分函数、宏和内核接口，标明正常路径、错误路径及未调用模板；项目封装和回调另列，不递归统计厂商库内部调用。新增、删除 API 或改变参数含义时同步更新说明。后续默认 **CubeMX + HAL**，寄存器工程仅保留为历史基线。模板与规则见 [API 说明模板](../docs/API说明模板.md)。
+
+本工程：[本代码所用API说明.md](本代码所用API说明.md)。
