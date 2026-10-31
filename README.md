@@ -7,6 +7,7 @@ GitHub：[kong-tiaoz/stm32f446re-learning](https://github.com/kong-tiaoz/stm32f4
 | 入口 | 内容 |
 | --- | --- |
 | [学习进度](learning/mastering-stm32/notes/progress.md) | 当前章节、已验证结果、待完成任务 |
+| [功能模块学习计划](learning/mastering-stm32/function-modules.md) | 围绕数据采集仪按功能验收推进；下一模块为串口交互与基础调试 |
 | [第一课](learning/mastering-stm32/notes/01-first-session.md) | 英语、代码对照和动手练习 |
 | [原厂资料](references/ST-official/README.md) | 七份离线 PDF、版本、来源和校验值 |
 | [Git 使用与迁移说明](docs/git-workflow.md) | 统一仓库的目录、提交、推送和恢复说明 |
@@ -15,12 +16,12 @@ GitHub：[kong-tiaoz/stm32f446re-learning](https://github.com/kong-tiaoz/stm32f4
 | 项目 | 用途 | 实现 | 状态 |
 | --- | --- | --- | --- |
 | [teststartproject](teststartproject/README.md) | 首次编译、备份、烧录与板载 LED 测试 | 寄存器、HSI 16 MHz、SysTick | 见项目说明及本地验证记录 |
-| [book-hello-nucleo](book-hello-nucleo/README.md) | 教材第 3 章：500 ms 翻转 LD2 | 作者 F446RE HAL 示例，VS Code/CMake 适配 | Debug/Release 已编译；硬件实测见项目记录 |
+| [book-hello-nucleo](book-hello-nucleo/README.md) | 教材第 3 章：HAL 闪灯与时序练习 | 作者 F446RE HAL 示例，VS Code/CMake 适配 | 各版本构建与硬件实测见项目记录 |
 | [book-debugging](book-debugging/README.md) | 教材第 5 章：串口、断点、变量与单步 | 作者 CH5，入口 main-ex1.c | Debug/Release 已编译；硬件实测见项目记录 |
 
-## 边读英文边做项目
+## 按功能模块学习与制作
 
-打开 [Mastering STM32 学习入口](learning/mastering-stm32/README.md)，从 [第一课](learning/mastering-stm32/notes/01-first-session.md) 开始。个人笔记、生词和进度随仓库保存。第 3、5 章 Markdown 和 39 张原书配图是仅本地的阅读副本，不上传 GitHub；新电脑需自行准备 EPUB 并按[阅读材料准备说明](learning/mastering-stm32/local-reading.md)生成。方式为“先运行完整例程，再拆解与修改”。
+打开 [Mastering STM32 学习入口](learning/mastering-stm32/README.md)，按[功能模块计划](learning/mastering-stm32/function-modules.md)推进可配置的数据采集仪。基础开发闭环已跑通，下一模块复用 `book-debugging` 完成串口交互与基础调试；[第一课](learning/mastering-stm32/notes/01-first-session.md)保留作历史参考。学习不设固定周数，方式为“先跑完整例程 → AI 最小修改并检查差异 → 编译与硬件验证 → 按需理解和复盘”，英文按需，Git 提交由用户操作。个人笔记和进度随仓库保存；第 3、5 章 Markdown 和 39 张原书配图是仅本地阅读副本，不上传 GitHub，新电脑按[阅读材料准备说明](learning/mastering-stm32/local-reading.md)生成。
 
 首次寄存器工程已完成备份、烧录校验，用户已确认“两短一长”。后续 HAL 实测与当前板上固件以各项目 `artifacts/verification.md` 为准；不能把构建成功当作硬件验收。
 
