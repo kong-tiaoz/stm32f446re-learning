@@ -4,6 +4,29 @@
 
 应用代码调用的 HAL/CMSIS 库函数为 0。直接寄存器读写不是 HAL API；REG32 是项目自定义宏，DSB、ISB、WFI 是汇编指令，不混作函数统计。以下仅提供历史解释，不改变已验收程序。
 
+## 核心功能实现的 API 链
+
+这是历史寄存器测试，以下是控制流程和硬件关系，不把寄存器访问或 CPU 指令伪称为 HAL API；后续学习默认 CubeMX + HAL，无需先深入本实现。
+
+```text
+启动入口 → main
+  → 配置向量表 VTOR、浮点访问权限 CPACR，执行 DSB/ISB
+  → RCC 寄存器选择 HSI 16 MHz、设置总线分频
+  → 使能 GPIOA 时钟，配置 PA5 输出
+  → 配置 SysTick：16000 个内核时钟一周期，开启中断
+  → 主循环读取 g_status.milliseconds
+      → 按 now % 2000 计算当前闪烁阶段
+      → 写 GPIOA_BSRR，控制 PA5/LD2
+      → 更新 g_status 状态，执行 WFI 等待唤醒
+      → 继续下一轮
+```
+
+独立的硬件中断链：SysTick 约每 1 ms 触发 → CPU 进入 SysTick_Handler → g_status.milliseconds 自增 → 返回主程序。本工程没有 HAL_IncTick、uwTick 或 HAL_Delay；主循环是根据时间戳判断阶段，不用阻塞延时 API。
+
+阶段判定对应：0–100 ms 亮、100–200 ms 灭、200–300 ms 亮、300–400 ms 灭、400–900 ms 亮、900–2000 ms 灭，重复“两短一长”。WFI 可能在已有待处理中断时立即继续，不能把它当作固定 1 ms 延时函数。
+
+来源：[src/main.c](src/main.c)。验证点为时基是否增加、PA5 输出和实际两短一长灯型；调试重连另行验收，保留[原始实测边界](artifacts/verification.md)。
+
 ## REG32(address)：寄存器访问宏
 
 | 问题 | 答案 |

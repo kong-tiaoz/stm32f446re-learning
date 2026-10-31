@@ -8,6 +8,77 @@
 
 来源：本工程 Core/Src、Core/Inc 和 Drivers 中随工程保存的声明/实现；调试工程另包含 retarget.c。HAL 接口存在不代表必须为一颗 LED 使用全部外设。
 
+## 核心功能实现的 API 链
+
+本节区分初始化、函数调用、数据流和硬件中断，不增加上文应用直接引用的 25 种 API 统计。当前例程使用阻塞式串口收发，不是 UART 中断或 DMA 接收程序。
+
+### 1．初始化链
+
+```text
+main
+  → HAL_Init → HAL_MspInit（HAL 回调：基础时钟和中断分组）
+  → SystemClock_Config
+      → 电源时钟及电压档位
+      → HAL_RCC_OscConfig → HAL_RCC_ClockConfig（84 MHz）
+  → MX_GPIO_Init → GPIO 时钟使能、HAL_GPIO_WritePin、HAL_GPIO_Init
+  → MX_USART2_UART_Init → HAL_UART_Init
+      → HAL_UART_MspInit（HAL 回调：USART2/GPIOA 时钟及 PA2/PA3 复用）
+  → RetargetInit(&huart2)
+      → 保存 gHuart
+      → setvbuf(stdout, NULL, _IONBF, 0)（关闭标准输出缓冲）
+```
+
+### 2．输出提示与消息：调用链和数据流
+
+```text
+调用链：printf → C 库格式化/输出逻辑 → _write → HAL_UART_Transmit
+数据流：字符串字节 → USART2 TX（PA2）→ 板载 ST-LINK VCP → 电脑串口终端
+```
+
+_write 是项目提供给 C 库的重定向钩子，不是 main 手动调用；HAL_UART_Transmit 在这里阻塞发送。串口终端应使用 115200 / 8N1 / 无流控，端口号以实际枚举为准。
+
+### 3．接收次数：调用链与输入方向
+
+```text
+调用链：scanf("%hhu", &uTimes) → C 库输入/解析逻辑 → _read
+          → HAL_UART_Receive(gHuart, ..., 1, HAL_MAX_DELAY)
+          → 收到字符后逐步返回 C 库解析 → 写入 uTimes
+
+数据流：电脑输入 3 和行尾 → ST-LINK VCP → USART2 RX（PA3）→ 接收缓冲区
+```
+
+_read 每次接收一个字节，C 库可能多次调用；没有输入时停在接收等待属于正常现象，不代表 CPU 故障。输入行尾使数字解析能够结束，字符 '3' 转换为数值 3。原例程未检查 scanf 返回值及范围，首次只用有效小整数；不要将其视为健壮的命令协议。
+
+### 4．核心业务流程
+
+```text
+printf（询问打印次数）
+  → scanf（等待输入，解析到 uTimes）
+  → printf（输出换行）
+  → for 循环：HAL_Delay(500) → ++i → printf（输出当前编号）
+  → 打印完后进入 while(1)，不再询问
+```
+
+输入 3 时预期输出编号 1、2、3；行间约 500 ms。LD2 不持续闪烁是此例程的正常设计，不能沿用闪灯工程的现象验收。
+
+### 5．延时支持链（与主程序并行配合）
+
+```text
+硬件 SysTick 每约 1 ms 触发中断
+  → CPU 进入 SysTick_Handler → HAL_IncTick → 更新 uwTick
+  → 中断返回，继续之前的主程序
+
+HAL_Delay(500) → 内部通过 HAL_GetTick 检查计数差 → 约够 500 ms 后返回
+```
+
+HAL_Delay 不调用 SysTick_Handler。HAL_InitTick/HAL_GetTick 属于 HAL 内部支持接口，此处用于解释依赖，不计入应用直接引用数量。断点暂停期间不能用墙上时间判断延时是否准确。
+
+### 6．错误分支与验收位置
+
+时钟或 UART 初始化失败：Error_Handler → __disable_irq → 死循环。UART 收发错误先返回 HAL 状态至 _write/_read，原重定向的错误返回约定存在前述限制，不是自动进入 Error_Handler。UART 反初始化钩子不在正常流程中。
+
+来源：[main-ex1.c](Core/Src/main-ex1.c)、[retarget.c](Core/Src/retarget.c)、[MSP](Core/Src/stm32f4xx_hal_msp.c)、[SysTick](Core/Src/stm32f4xx_it.c)。验收看串口提示、输入 3 后三行输出、断点处 uTimes == 3 和循环变量；本节为源码说明，不宣称硬件测试已完成。
+
 ## 0．`HAL_GPIO_WritePin()`
 
 路径状态：正常路径。

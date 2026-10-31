@@ -8,6 +8,67 @@
 
 来源：本工程 Core/Src、Core/Inc 和 Drivers 中随工程保存的声明/实现；调试工程另包含 retarget.c。HAL 接口存在不代表必须为一颗 LED 使用全部外设。
 
+## 核心功能实现的 API 链
+
+本节按当前源码梳理，不增加 API 去重数量。`→` 表示本段注明的调用或执行顺序；硬件触发、中断、回调和数据流另行标注，不能把所有箭头理解为主函数逐个调用。
+
+### 1．初始化：只在进入主循环前执行
+
+```text
+main
+  → HAL_Init
+      → HAL_MspInit（HAL 调用项目实现的初始化钩子）
+          → SYSCFG/PWR 时钟使能、HAL_NVIC_SetPriorityGrouping
+  → SystemClock_Config
+      → PWR 时钟使能、电压档位配置
+      → HAL_RCC_OscConfig（配置 HSI 和 PLL）
+      → HAL_RCC_ClockConfig（SYSCLK 84 MHz、总线分频）
+  → MX_GPIO_Init
+      → GPIO 端口时钟使能
+      → HAL_GPIO_WritePin（预置 LD2 为低）
+      → HAL_GPIO_Init（配置 B1 和 LD2）
+  → MX_USART2_UART_Init
+      → HAL_UART_Init
+          → HAL_UART_MspInit（HAL 调用项目钩子）
+              → USART2/GPIOA 时钟使能、HAL_GPIO_Init（PA2/PA3 复用）
+```
+
+HAL_Init 内部还通过 HAL_InitTick 配置默认时基，时钟配置过程中也会更新时基。HAL_InitTick 属于此处解释的库内部调用，不属于上文应用直接引用的 20 种接口。串口是原例程保留的初始化，主循环没有收发数据；B1 的配置也不等于完整按键应用已实现。
+
+### 2．核心功能：主循环控制 LD2
+
+```text
+while (1) 反复执行
+  → HAL_GPIO_WritePin(PA5, SET)   → LD2 亮
+  → HAL_Delay(100)               → 等待约 100 ms
+  → HAL_GPIO_WritePin(PA5, RESET) → LD2 灭
+  → HAL_Delay(2000)              → 等待约 2000 ms
+  → 回到下一轮
+```
+
+这里 PA5 是对 LD2_GPIO_Port/LD2_Pin 的文字简写，并非可直接编译的函数参数写法。当前源码周期约 2.1 秒；100/900 ms 是历史验收版本，不把那版结果套用到当前源码。
+
+### 3．时间支持：中断与主程序配合
+
+```text
+硬件：SysTick 每约 1 ms 触发中断
+  → CPU 暂停主程序，进入 SysTick_Handler
+      → HAL_IncTick → 更新 uwTick
+  → 中断返回，继续主程序刚才的执行位置
+
+主程序：HAL_Delay(100 或 2000)
+  → 内部调用 HAL_GetTick，反复检查计数差
+  → 时间够了才返回，继续下一句
+```
+
+HAL_Delay 不会主动调用 SysTick_Handler；硬件中断在等待期间独立发生。默认配置下 HAL_IncTick 每次将 uwTick 增加 1。HAL_GetTick 是库内部依赖，不增加应用直接引用接口的统计。关闭相关中断或时基停止时，延时可能无法结束；中断停住不等于源码中的时间数值改变。
+
+### 4．错误分支和验证位置
+
+HAL_RCC_OscConfig、HAL_RCC_ClockConfig 或 HAL_UART_Init 返回非 HAL_OK 时，项目进入 Error_Handler → __disable_irq → 死循环。HAL_UART_MspDeInit 及其关闭时钟/复位引脚的代码只作为保留模板，不在正常闪灯链中。
+
+源码入口：[main.c](Core/Src/main.c)、[MSP 钩子](Core/Src/stm32f4xx_hal_msp.c)、[SysTick 中断](Core/Src/stm32f4xx_it.c)。验证顺序：初始化是否越过错误处理 → uwTick 是否变化 → PA5 状态与实际灯型；源码静态链不替代硬件验收。
+
 ## 0．`HAL_GPIO_WritePin()`
 
 路径状态：正常路径。
